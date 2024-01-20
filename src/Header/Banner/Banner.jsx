@@ -1,6 +1,7 @@
 import bannerImg from '/gesto.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faRightLong } from '@fortawesome/free-solid-svg-icons'
+import Navbar from '../Navbar/Navbar';
 
 const Banner = () => {
       const bannerStyle = {
@@ -10,7 +11,9 @@ const Banner = () => {
 
 
       return (
-            <div style={bannerStyle} className="max-w-full lg:h-screen  lg:px-10 bg-gray-200">
+            <div style={bannerStyle} className="max-w-full lg:h-screen  lg:px-20 bg-gray-200">
+
+              <Navbar/>
 
             <div className='flex flex-col lg:flex-row items-center justify-between'>
           
@@ -18,8 +21,8 @@ const Banner = () => {
           
                 <div className='pt-8 lg:pt-20'>
                   <div className='flex justify-start'>
-                    <img src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/subtitle-icon-1.png" alt="" />
-                    <h2 className='ml-2 text-xl font-semibold lg:text-2xl'>Junior Web Developer</h2>
+                    <img className='w-5 h-5 mt-1' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/subtitle-icon-1.png" alt="" />
+                    <h2 className='pl-2 text-xl font-semibold lg:text-xl'>Junior Web Developer</h2>
                   </div>
                 </div>
           
@@ -59,9 +62,9 @@ const Banner = () => {
           
               </div>
           
-              <div className="mt-14 lg:mt-20 lg:w-[50%] sm:px-10 transform: translateX(32.56px) translateY(7.4px) ">
+              <div className="mt-14 lg:mt-20 lg:w-[50%] sm:px-10 ">
                 <div className='pl-'>
-                  <img className='lg:w-11/12' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/gto-hero-1-img-1.png" alt="" />
+                  <img className='lg:w-11/12 h-72' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/gto-hero-1-img-1.png" alt="" />
                 </div>
               </div>
           
