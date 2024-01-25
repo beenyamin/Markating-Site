@@ -11,11 +11,9 @@ const Banner = () => {
 
 
       return (
-            <div style={bannerStyle} className="max-w-full lg:h-screen  lg:px-20 bg-gray-200">
-
+            <div style={bannerStyle} className="max-w-full lg:h-screen lg:px-20 bg-gray-200">
               <Navbar/>
-
-            <div className='flex flex-col lg:flex-row items-center justify-between'>
+            <div className='flex flex-col lg:flex-row  items-center justify-between'>
           
               <div className='lg:w-[50%] w-full pl-5'>
           

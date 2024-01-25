@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-       Urbanist: "'Urbanist', sans-serif",
+        Oswald: "'Oswald', sans-serif"
        }
     },
   },
