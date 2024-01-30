@@ -9,7 +9,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Oswald: "'Oswald', sans-serif"
+        MochiyPopOne: "'Mochiy Pop One', sans-serif",
+        Poppins: "'Poppins', sans-serif;"
        }
     },
   },

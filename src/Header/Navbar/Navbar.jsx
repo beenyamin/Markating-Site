@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className="">
-      <div className="navbar ">
+      <div className="navbar max-w-full ">
         <div className="navbar-start">
 
           {/* Phone */}
@@ -31,9 +31,9 @@ const Navbar = () => {
             </ul>
           </div>
 
-          <a className="btn btn-ghost text-xl">DevPro</a>
+          <a className="btn btn-ghost text-xl font-MochiyPopOne">DevPro</a>
         </div>
-        <div className="navbar-center hidden lg:flex transition-all">
+        <div className="navbar-center font-medium  hidden lg:flex transition-all">
 
           <Link className='group relative px-2 py-3 transition-all '>
           <p className='flex cursor-pointer items-start gap-1 text-neutral-400 group-hover:text-black'>

@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const Main = () => {
       return (
-            <div className="font-Oswald ">
+            <div className="font-Poppins">
                  <Outlet></Outlet>
             </div>
       );
