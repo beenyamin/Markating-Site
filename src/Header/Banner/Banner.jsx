@@ -65,6 +65,8 @@ const Banner = () => {
                   <img className='lg:w-11/12 h-72' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/gto-hero-1-img-1.png" alt="" />
                 </div>
               </div>
+
+             
           
             </div>
           
