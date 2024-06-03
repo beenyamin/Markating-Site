@@ -5,51 +5,11 @@
 @tailwind utilities;
 
 
-/* Add custom styles */
 @layer components {
-
-  
-  
-
-  @keyframes slideIn {
-    0% {
-      transform: translateY(-30%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  /* Apply animation to elements */
-  .animate-slide-in {
-    animation: slideIn 1.5s ease-in-out forwards;
-  }
-
-
-  @keyframes slideOut {
-    0% {
-      transform: translateY(30%);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  /* Apply animation to elements */
-  .animate-slide-Out {
-    animation: slideOut 1.5s ease-in-out forwards;
-  }
-
 
   .swiper-pagination {
     margin-top: 40px;
   }
-
-
 
 
   .button {
@@ -60,7 +20,7 @@
     position: relative;
     display: inline-flex;
     border-radius: 8px;
-    padding: 14px 30px;
+    padding: 14px 20px; /* Adjust padding for desktop */
     background-color: #ec4814;
     color: #fff;
     font-size: 16px;
@@ -70,8 +30,14 @@
     text-decoration: none;
     letter-spacing: 1px;
     overflow: hidden;
+}
 
-  }
+@media (max-width: 640px) {
+    /* Adjust padding for mobile */
+    .button {
+        padding: 14px 15px; /* Adjust padding for mobile screens */
+    }
+}
 
   .button span {
     position: relative;
@@ -97,7 +63,7 @@
   }
 
   .button:hover {
-    background-color: #10ad90;
+    background-color: #10ada5;
     border-color: e;
   }
 
@@ -107,6 +73,102 @@
     padding-top: 5px;
     /* Adjust this value as needed */
   }
+
+
+  /* 01 Service Card animation */
+@keyframes slideInFromTop {
+  0% {
+      transform: translateY(-25%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0);
+      opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideInFromTop 2.5s ease-in-out forwards;
+}
+
+
+
+  @keyframes slideOut {
+    0% {
+      transform: translateY(30%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  /*02  text animation */
+  .animate-slide-Out {
+    animation: slideOut 1.5s ease-in-out forwards;
+  }
+
+
+
+  /*03  Experience Photo  */
+  @keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(30px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Hover Move Picture */
+
+@keyframes hoverMove {
+  0% {
+      transform: translate(0, 0);
+  }
+  25% {
+      transform: translate(10px, 0);
+  }
+  50% {
+      transform: translate(0, 10px);
+  }
+  75% {
+      transform: translate(-10px, 0);
+  }
+  100% {
+      transform: translate(0, 0);
+  }
+}
+
+.hover-move:hover {
+  animation: hoverMove 6s ease-in-out infinite;
+}
+
+
+
+
+/* 04 Footer animation */
+@keyframes slideInFromLeft {
+  0% {
+      transform: translateX(-100%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.animate-footer {
+  animation: slideInFromLeft 3s forwards;
+}
+
+
 
 
 }

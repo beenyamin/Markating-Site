@@ -15,7 +15,7 @@ const Navbar = () => {
     <header className={`flex w-full items-center `}>
 
       <div className="container">
-        <div className="relative -mx-4 flex items-center justify-between">
+        <div className="relative -mx-4 flex items-center justify-between ">
 
 
           {/* logo  */}
@@ -39,14 +39,14 @@ const Navbar = () => {
               <nav
                 // :className="!navbarOpen && 'hidden' "
                 id="navbarCollapse"
-                className={`absolute right-4 top-full w-full max-w-[230px] rounded-md px-6 py-8 shadow bg-white lg:bg-transparent  dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent lg:border-0 border-t-2 border-red-500 ${!open && "hidden"} `}  >
+                className={`absolute right-4 top-full w-full max-w-[250px] rounded-md px-6 py-8 shadow bg-white lg:bg-transparent  dark:bg-dark-2 lg:static lg:block lg:w-full lg:max-w-full lg:shadow-none lg:dark:bg-transparent lg:border-0 border-t-2 border-red-500 ${!open && "hidden"} `}  >
 
 
                 <ul className="block lg:flex lg:gap-6  px-4 lg:ml-24 ml-5  ">
-                  <Link className=" flex lg:py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white  lg:inline-flex mb-2 lg:mb-0 ">Home
+                  <Link to='/' className=" flex lg:py-2 text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white  lg:inline-flex mb-2 lg:mb-0 ">Home
                   </Link>
 
-                  <Link className='group relative lg:px-2 lg:pt-2 transition-all cursor-pointer   '>
+                  <Link to='' className='group relative lg:px-2 lg:pt-2 transition-all cursor-pointer   '>
 
                     <p className='flex items-start gap-1  text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white  lg:inline-flex  group-hover:text-black'>
                       <span>Pages</span>
@@ -54,9 +54,10 @@ const Navbar = () => {
                     </p>
 
                     {/* dropdown */}
-                    <div className='absolute lg:right-0 lg:top-10 top-[120px] right-2   w-auto flex-col gap-1 hidden rounded-lg  text-black border-t-2 border-red-500  bg-white py-3 shadow-md transition-all group-hover:flex '>
 
-                      <Link className='flex cursor-pointer text-base font-medium items-center py-1 pl-6 pr-8  hover:text-[#ed500c]'>
+                    <div className='absolute lg:right-0 lg:top-10 top-[120px] right-2  w-[250px] lg:w-auto flex-col gap-1 hidden rounded-lg  text-black border-t-2 border-red-500  bg-white py-3 shadow-md transition-all group-hover:flex '>
+
+                      <Link to='/Projects' className='flex cursor-pointer text-base font-medium items-center py-1 pl-6 pr-8  hover:text-[#ed500c]'>
                         <FontAwesomeIcon icon={faLayerGroup} style={{ color: "#74C0FC", }} />
                         <span className='pl-2 whitespace-nowrap'>Project</span>
                       </Link>
@@ -64,7 +65,7 @@ const Navbar = () => {
                         <FontAwesomeIcon icon={faLayerGroup} style={{ color: "#74C0FC", }} className='' />
                         <span className='pl-2 whitespace-nowrap'>Our Process</span>
                       </Link>
-                      <Link className='flex cursor-pointer   text-base font-medium items-center py-1 pl-6 pr-8  hover:text-[#ed500c]'>
+                      <Link to='/Faq' className='flex cursor-pointer   text-base font-medium items-center py-1 pl-6 pr-8  hover:text-[#ed500c]'>
                         <FontAwesomeIcon icon={faLayerGroup} style={{ color: "#74C0FC", }} />
                         <span className='pl-2 whitespace-nowrap'>FAQ</span>
                       </Link>
@@ -72,8 +73,8 @@ const Navbar = () => {
 
                   </Link>
 
-                  <Link className="flex lg:py-2  text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white  lg:inline-flex mb-2 lg:mb-0 mt-2 lg:mt-0">About Us</Link>
-                  <Link className="flex lg:py-2  text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white  lg:inline-flex  mb-2 lg:mb-0">Contact Us</Link>
+                  <Link to='/AboutUs' className="flex lg:py-2  text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white  lg:inline-flex mb-2 lg:mb-0 mt-2 lg:mt-0">About Us</Link>
+                  <Link to='/ContactUs' className="flex lg:py-2  text-base font-medium text-body-color hover:text-dark dark:text-dark-6 dark:hover:text-white  lg:inline-flex  mb-2 lg:mb-0">Contact Us</Link>
                 </ul>
               </nav>
 

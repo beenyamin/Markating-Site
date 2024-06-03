@@ -8,7 +8,8 @@ const Main = () => {
               md:max-w-[991px]
               lg:max-w-[1200px]
               xl:max-w-[1250px]
-              items-center mx-auto  ">
+              items-center mx-auto  bg-gray-50 ">
+              
                   <Outlet></Outlet>
             </div>
       );

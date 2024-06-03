@@ -1,13 +1,12 @@
 import Navbar from "../../Header/Navbar/Navbar";
 
-
-const Contact = () => {
+const SignIn = () => {
       return (
             <div className="lg:px-20">
-                  <Navbar/>
-                  Contact Me
+                      <Navbar/>
+                  Sign In Page 
             </div>
       );
 };
 
-export default Contact;
+export default SignIn;

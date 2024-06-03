@@ -1,9 +1,9 @@
 import bannerImg from '/gesto.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck, faRightLong } from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import { FaArrowTrendUp } from "react-icons/fa6";
 import Navbar from '../Navbar/Navbar';
-import Service from '../../Components/Service/Service';
+
 import useButtonRipple from '../../Hooks/useButtonRipple';
 
 
@@ -27,23 +27,23 @@ const Banner = () => {
               <h2 className='pl-2 text-xl font-semibold lg:text-xl '>Front End Developer</h2>
             </div>
           </div>
-          <div>
+          <div className=''>
 
-            <h2 className='text-3xl lg:text-4xl font-bold '>Expert in HTML, CSS, & <br /> JavaScript  </h2>
-            <p className='text-stone-600 '>
+            <h2 className='text-3xl lg:text-4xl font-bold pt-2 '>Expert in HTML, CSS, & <br /> JavaScript  </h2>
+            <p className='text-stone-600 pt-2 '>
               Crafting elegant interfaces, blending creativity with code, delivering seamless user experiences, and pushing boundaries with every project.
             </p>
 
           </div>
 
-          <div className='space-y-2 mt-2'>
+          <div className='space-y-2 pt-2'>
             <div className='flex '>
-              <FontAwesomeIcon icon={faCircleCheck} size="lg" style={{ color: "#ed5807" }} />
+              <FontAwesomeIcon icon={faCircleCheck} size="lg" style={{ color: "#ec4814" }} />
               <h2 className='font-semibold text-sm pl-2'>Responsive design</h2>
             </div>
 
             <div className='flex'>
-              <FontAwesomeIcon icon={faCircleCheck} size="lg" style={{ color: "#ed5807" }} />
+              <FontAwesomeIcon icon={faCircleCheck} size="lg" style={{ color: "#ec4814" }} />
               <h2 className='font-semibold text-sm pl-2'>Seamless user interactivity </h2>
             </div>
           </div>
@@ -70,7 +70,7 @@ const Banner = () => {
             </div>
 
             <div>
-              <h2 className=' text-base '>Joined Our Community
+              <h2 className='text-base '>Joined Our Community
                 <br /> <span className='text-[#ec4814]'>10k</span> Developer </h2>
             </div>
 
@@ -79,8 +79,8 @@ const Banner = () => {
         </div>
 
         <div className="mt-14 lg:mt-20 mb-10 lg:w-[50%] sm:px-10">
-          <div className=''>
-            <img className='lg:w-11/12 h-72' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/gto-hero-1-img-1.png" alt="" />
+          <div className='flex items-center justify-center'>
+            <img className='lg:w-11/12 lg:h-72 w-9/12 h-60 animate-float ' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/gto-hero-1-img-1.png" alt="" />
           </div>
         </div>
 

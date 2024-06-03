@@ -1,13 +1,12 @@
 import Navbar from "../../Header/Navbar/Navbar";
 
-
-const Contact = () => {
+const Projects = () => {
       return (
             <div className="lg:px-20">
-                  <Navbar/>
-                  Contact Me
+                      <Navbar/>
+                  Our Projects 
             </div>
       );
 };
 
-export default Contact;
+export default Projects;
