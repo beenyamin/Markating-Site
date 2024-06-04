@@ -9,6 +9,7 @@ import { FiYoutube } from "react-icons/fi";
 
 
 
+
 const Footer = () => {
 
       const [isHoverAboutUs, setIsHoverAboutUs] = useState(false);
@@ -38,7 +39,10 @@ const Footer = () => {
 
                         <div className="px-6 md:px-0">
                               <Link href="/" className="block w-full ">
+                                    {/* <img src={Dev} className="h-64 bg-red-700" alt="" /> */}
+
                                     <h2 className="flex text-xl font-MochiyPopOne gap-1 "><IconBxlDevTo /><span className='mt-3'>Zone</span></h2>
+                                   
                                     <p className="mt-3 base ">
                                           Empowering businesses with <br /> cutting-edge web solutions <br /> Expertise, innovation <br /> & reliability at your service.
                                     </p>
@@ -143,9 +147,9 @@ const Footer = () => {
                                           <input
                                                 type='text'
                                                 placeholder='Your Email'
-                                                className='md:w-full w-40 bg-white  rounded-l-full  dark:border-dark-3 py-[10px] pr-3 pl-5 text-dark-6 outline-none transition focus:border focus:border-[#7e2d5e] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2'
+                                                className='md:w-full w-40 bg-white  rounded-l-md  dark:border-dark-3 py-[10px] pr-3 pl-5 text-dark-6 outline-none transition focus:border focus:border-[#7e2d5e] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2'
                                           />
-                                          <span className='h-full  rounded-r-full  dark:border-dark-3  bg-[#ed500c] dark:bg-dark-2 py-[10px] px-4 text-base font-normal uppercase text-white dark:text-dark-6'>
+                                          <span className='h-full  rounded-r-md dark:border-dark-3  bg-[#ed500c] dark:bg-dark-2 py-[10px] px-4 text-base font-normal uppercase text-white dark:text-dark-6 cursor-pointer'>
                                                 Submit
                                           </span>
                                     </div>
@@ -161,9 +165,9 @@ const Footer = () => {
                               <p>Copyright © 2024 Dev Zone - All right reserved</p>
                         </div>
                         <div className="flex gap-3 md:mt-0 mt-6 ">
-                              <a className="border-2 rounded-full p-2 hover:bg-white hover:text-[#ed500c]">  <FaFacebookF className="" size={20} /> </a>
-                              <a className="border-2 rounded-full p-2 hover:bg-white hover:text-[#ed500c] ">  <FaLinkedinIn className="" size={20} /> </a>
-                              <a className="border-2 rounded-full p-2 hover:bg-white hover:text-[#ed500c] ">  <FiYoutube className="" size={20} /> </a>
+                              <a className=" rounded-md p-2 bg-white text-[#ed500c] hover:bg-[#13112d] hover:text-white cursor-pointer">  <FaFacebookF className="" size={20} /> </a>
+                              <a className=" rounded-md p-2 bg-white text-[#ed500c] hover:bg-[#13112d] hover:text-white  cursor-pointer">  <FaLinkedinIn className="" size={20} /> </a>
+                              <a className=" rounded-md p-2 bg-white text-[#ed500c] hover:bg-[#13112d] hover:text-white cursor-pointer">  <FiYoutube className="" size={20} /> </a>
 
                         </div>
                   </div>

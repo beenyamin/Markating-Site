@@ -2,8 +2,6 @@
 
 <CountUp end={50} duration={5.0} />
 
-
-
   <div className="carousel w-full  lg:w-10/12 shadow-xl rounded-md">
 
     <div id="slide1" className="carousel-item relative w-full bg-base-100 rounded-2xl">

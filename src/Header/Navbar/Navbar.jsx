@@ -82,15 +82,12 @@ const Navbar = () => {
 
 
             <div className="hidden justify-end pr-16 sm:flex lg:pr-0">
-              <Link className="px-7 py-3 text-base font-medium text-dark hover:text-red-500 dark:text-white" > Sign in </Link>
-              <button
+              <Link to="/signIn" className="px-7 py-3 text-base font-medium text-dark hover:text-red-500 dark:text-white" > Sign in </Link>
+            <Link to="/signUp">  <button
                 className="button"
                 onMouseMove={handleMouseMove}
                 style={{ '--x': `${position.x}px`, '--y': `${position.y}px` }} >
-                Sign Up </button>
-
-
-
+                Sign Up </button></Link>
             </div>
           </div>
 
