@@ -1,58 +1,77 @@
 import { FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, } from "react-icons/fa6";
 import Navbar from "../../Header/Navbar/Navbar";
-import { BsChatSquareText, } from "react-icons/bs";
 import { FaYoutube } from "react-icons/fa";
 import Footer from "../../Components/Footer/Footer";
 import { GoPerson } from "react-icons/go";
-import { AiOutlineMail } from "react-icons/ai";
 import { useState } from "react";
 import useButtonRipple from "../../Hooks/useButtonRipple";
-import { Link } from "react-router-dom";
 import { GrLocation } from "react-icons/gr";
 import { GoMail } from "react-icons/go";
 import { LuPhone } from "react-icons/lu";
 import Lottie from "lottie-react";
 import animationData from '../../../public/1NszGGWNsj.json';
 import { useForm } from "react-hook-form";
-
-
+import toast from "react-hot-toast";
+import shapeTopLeft from '../../../src/assets/Contact.png';
+import shapeBottomRight from '../../../src/assets/Contact1.png';
+import { TbMailHeart, TbMessage2Heart } from "react-icons/tb";
 
 
 const Contact = () => {
-      const [isChecked, setIsChecked] = useState(false)
       const { position, handleMouseMove } = useButtonRipple();
+      const { register, handleSubmit, formState: { errors }, reset } = useForm();
+      const [isChecked, setIsChecked] = useState(false);
 
-      const { register, handleSubmit , formState: { errors } } = useForm()
-      const onSubmit = (data) => console.log(data)
+
+      const onSubmit = (data) => {
+            if (!isChecked) {
+                  toast.error(" Agreed to the terms and conditions ?", {
+                        icon: '🙂',
+                        style: {
+                              borderRadius: '10px',
+                              background: '#ed500c',
+                              color: '#fff',
+                        },
+                  });
+                  return;
+            }
+            console.log(data);
+            reset()
+      };
 
       const handleCheckboxChange = () => {
-            setIsChecked(!isChecked)
-      }
+            setIsChecked(true);
+      };
       return (
 
-            <div >
+            <div className="">
+
 
                   <div className="lg:px-20">
                         <Navbar />
                   </div>
 
-                  <div className="py-16 lg:px-20">
-                        <div className="bg-[#ed500c] h-[240px] rounded-md flex flex-col items-center  justify-center relative overflow-hidden">
+                  <div className="pt-20 lg:px-20 relative overflow-hidden">
 
-                              <h2 className="text-center text-lg font-medium bg-white py-2 px-6 rounded-md">Write To  Us </h2>
-                              <h3 className="text-4xl font-semibold mt-5 text-white">Get In Touch </h3>
+                        <div className="h-[240px] bg-[#ed500c] rounded-md flex flex-col items-center justify-center ">
+                              <h2 className="text-center text-lg font-semibold bg-white py-2 px-6 rounded-2xl">Write To Us</h2>
+                              <h3 className="text-4xl font-semibold mt-5 text-white">Get In Touch</h3>
+
+                              {/* Shape design in top left corner */}
+                              <div className="absolute -top-3 left-4 w-36 h-[180px] md:block hidden" style={{ backgroundImage: `url(${shapeTopLeft})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', }}></div>
+                              {/* Shape design in bottom right corner */}
+                              <div className="absolute bottom-0  right-0 w-36 h-[100px]  md:block hidden " style={{ backgroundImage: `url(${shapeBottomRight})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
                         </div>
-
+                        
                   </div>
 
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-10 py-20 lg:px-20">
+                  <div className="grid grid-cols-1 md:grid-cols-2 md:gap-5 gap-10 py-28 lg:px-20">
                         {/* left */}
-                        <form   onSubmit={handleSubmit(onSubmit)} className=" md:h-[910px] border rounded-md p-5 md:p-0 ">
-
+                        <form onSubmit={handleSubmit(onSubmit)} className="md:h-[910px] border rounded-md p-3 md:p-0">
                               <div className="p-5 space-y-2">
-                                    <h2 className="text-4xl font-bold">Lets Talk ! </h2>
-                                    <p className="text-lg font-medium text-dark-5">Get in touch with us with in the enquiry <br /> from or contact details below </p>
+                                    <h2 className="text-4xl font-bold">Let's Talk!</h2>
+                                    <p className="text-lg font-medium text-dark-5">Get in touch with us within the enquiry form or contact details below</p>
                               </div>
 
                               <div className="flex md:flex-row flex-col gap-5 p-5">
@@ -60,17 +79,17 @@ const Contact = () => {
                                           <label className='mb-[10px] block text-lg font-medium text-dark dark:text-white'>
                                                 First Name
                                           </label>
-                                          <div className='relative '>
+                                          <div className='relative'>
                                                 <input
-                                                      {...register("firstName", { required: true, maxLength: 20 })}
+                                                      {...register("firstName", { required: "First name is required", maxLength: { value: 20, message: "Max length is 20" } , pattern: { value: /^[A-Za-z]+$/i, message: "Only alphabets are allowed" } })}
                                                       type='text'
-                                                      placeholder='Been '
+                                                      placeholder='Been'
                                                       className='w-full mt-1 bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2'
                                                 />
-                                                <span className='absolute text-dark-3 top-1/2 left-4 -translate-y-1/2'>
-                                                      <GoPerson size={20} />
+                                                {errors.firstName && <p className="text-red-500">{errors.firstName.message}</p>}
+                                                <span className='absolute text-dark-3 top-[15px] left-4'>
+                                                      <GoPerson size={20} className="hover:text-[#ed500c] "/>
                                                 </span>
-
                                           </div>
                                     </div>
 
@@ -80,15 +99,15 @@ const Contact = () => {
                                           </label>
                                           <div className='relative'>
                                                 <input
-                                                      {...register("lastName", { pattern: /^[A-Za-z]+$/i })}
+                                                      {...register("lastName",{ required: "Last name is required", maxLength: { value: 20, message: "Max length is 20" } ,  pattern: { value: /^[A-Za-z]+$/i, message: "Only alphabets are allowed" } })}
                                                       type='text'
                                                       placeholder='Yamin'
                                                       className='w-full mt-1 bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2'
                                                 />
-                                                <span className='absolute text-dark-3 top-1/2 left-4 -translate-y-1/2'>
-                                                      <GoPerson size={20} />
+                                                {errors.lastName && <p className="text-red-500">{errors.lastName.message}</p>}
+                                                <span className='absolute text-dark-3 top-[15px] left-4'>
+                                                      <GoPerson size={20} className="hover:text-[#ed500c] "/>
                                                 </span>
-
                                           </div>
                                     </div>
                               </div>
@@ -100,36 +119,35 @@ const Contact = () => {
                                           </label>
                                           <div className='relative text-dark-3'>
                                                 <input
-                                                {...register("mail", { required: "Email Address is required" })}
-                                                aria-invalid={errors.mail ? "true" : "false"}
+                                                      {...register("mail", { required: "Email Address is required" })}
+                                                      aria-invalid={errors.mail ? "true" : "false"}
                                                       type='email'
-                                                      placeholder='info@yourmai.com'
-                                                      className='w-full bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c]disabled:cursor-default disabled:bg-gray-2'
+                                                      placeholder='info@yourmail.com'
+                                                      className='w-full bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2'
                                                 />
-                                                <span className='absolute top-1/2 left-4 -translate-y-1/2'>
-                                                      <AiOutlineMail />
+                                                {errors.mail && <p role="alert" className="text-red-500">{errors.mail.message}</p>}
+                                                <span className='absolute top-[15px] left-4'>
+                                                      <TbMailHeart size={20} className="hover:text-[#ed500c] " />
                                                 </span>
                                           </div>
                                     </div>
 
                                     <div>
-                                          <>
-                                                <label className='mb-[10px] block text-lg font-medium text-dark dark:text-white'>
-                                                      Message
-                                                </label>
-                                                <div className='relative '>
-                                                      <textarea
-                                                        {...register("message", { required: true, maxLength: 100 })}
-                                                            type='text'
-                                                            rows='6'
-                                                            placeholder='Type your message'
-                                                            className='w-full bg-transparent rounded-md border border-stroke dark:border-dark-3 p-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c]disabled:cursor-default disabled:bg-gray-2'
-                                                      />
-                                                      <div className='absolute top-[18px] left-4'>
-                                                            <span className="text-dark-3">  < BsChatSquareText className="" /></span>
-                                                      </div>
+                                          <label className='mb-[10px] block text-lg font-medium text-dark dark:text-white'>
+                                                Message
+                                          </label>
+                                          <div className='relative'>
+                                                <textarea
+                                                      {...register("message", { required: "Message is required", maxLength: { value: 100, message: "Max length is 100" } })}
+                                                      rows='6'
+                                                      placeholder='Type your message'
+                                                      className='w-full bg-transparent rounded-md border border-stroke dark:border-dark-3 p-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2'
+                                                />
+                                                {errors.message && <span className="text-red-500">{errors.message.message}</span>}
+                                                <div className='absolute top-[18px] left-4'>
+                                                      <span className="text-dark-3"><TbMessage2Heart  size={20} className="hover:text-[#ed500c] "/></span>
                                                 </div>
-                                          </>
+                                          </div>
                                     </div>
                               </div>
 
@@ -144,46 +162,42 @@ const Contact = () => {
                                                       className='sr-only'
                                                 />
                                                 <div className={`box border-[#ed500c] mr-4 flex h-5 w-5 items-center justify-center rounded-full border ${isChecked && 'bg-[#ed500c]'}`}>
-                                                      <span
-                                                            className='h-[10px] w-[10px] rounded-full bg-white dark:bg-dark'
-                                                      >
-                                                            {' '}
-                                                      </span>
+                                                      <span className='h-[10px] w-[10px] rounded-full bg-white dark:bg-dark'></span>
                                                 </div>
                                           </div>
-                                          <h2 className="text-lg font-medium">  Agree To Our <a className="text-[#ed500c] underline ml-3">Term & Condition </a></h2>
-
+                                          <h2 className="text-lg font-medium">
+                                                Agree To Our <a className="text-[#ed500c] underline ml-1">Term & Condition</a>
+                                          </h2>
                                     </label>
 
 
                               </div>
 
                               <div className="px-5 py-6">
-
-                                    <p>Welcome to Website Name!
-                                          These terms and conditions outline the rules and regulations for the use of Company Name's Website, located at Website.com.
-                                          By accessing this website we assume you accept these terms and conditions. Do not continue to use Website Name if you do not agree to take all of the terms and conditions stated on this page.</p>
-
+                                    <p>
+                                          By accessing this website, you agree to abide by our terms of use, including respecting intellectual property rights and refraining from unauthorized use of content. Thank you for visiting
+                                    </p>
 
                                     <div className="mt-5">
-                                          <Link to="">  <button
-                                                type="submit"
+
+
+                                          <button type="submit"
                                                 className="button"
                                                 onMouseMove={handleMouseMove}
-                                                style={{ '--x': `${position.x}px`, '--y': `${position.y}px` }} >
-                                                Send Message </button></Link>
+                                                style={{ '--x': `${position.x}px`, '--y': `${position.y}px` }}
+                                          >
+                                                Send Message
+
+                                          </button>
+
                                     </div>
-
                               </div>
-
-
                         </form>
-
                         {/* Right */}
                         <div className=" rounded-md ">
 
                               <div className=" h-[350px] border p-5 rounded-md">
-                                    <div className=" h-[280px] p-10 flex items-center justify-center">
+                                    <div className=" md:h-[280px] h-[400px] md:p-10 flex items-center justify-center">
                                           <Lottie animationData={animationData} style={{ height: '200%', width: '200%' }} />
                                     </div>
                               </div>
@@ -219,7 +233,7 @@ const Contact = () => {
                                           </div>
                                           <div className="space-y-1">
                                                 <h2 className="text-lg font-medium">Headquarter</h2>
-                                                <p className="text-slate-600 ">Email : beenyamin115@gmail.com</p>
+                                                <p className="text-slate-600 ">Bogura , Bangladesh</p>
                                           </div>
                                     </div>
 
@@ -250,23 +264,7 @@ const Contact = () => {
                   </div>
                   <Footer />
 
-
-
-
-
-
-
-
-
-            
-               
             </div>
-
-
-
-
-
-// 
 
       );
 };
