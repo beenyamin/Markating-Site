@@ -3,7 +3,9 @@ import Navbar from '../../Header/Navbar/Navbar';
 import shapeTopLeft from '../../../src/assets/Contact.png';
 import shapeBottomRight from '../../../src/assets/Contact1.png';
 
+
 const AboutUs = () => {
+
   return (
     <div className="md:px-20 max-w-full md:h-[800px] h-[1000px] relative">
       <Navbar />

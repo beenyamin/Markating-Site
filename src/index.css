@@ -11,7 +11,7 @@
     margin-top: 40px;
   }
 
-  /* Add this CSS to your stylesheet */
+
 .side-shape {
   position: absolute;
   top: 4;
@@ -20,10 +20,11 @@
   height: 100%;
   background: url('/public/Untitled\ design\ \(1\).png') no-repeat ;
   background-size: contain;
-  z-index: -1; /* Ensure it stays in the background */
+  z-index: -1; 
 }
 
 
+/* Base styles for all devices */
 .button {
   position: relative;
   transition: all 0.3s ease-in-out;
@@ -37,11 +38,31 @@
   justify-content: center;
   color: #ffff;
   gap: 10px;
-  font-weight: bold;
+  font-weight: 600;
   outline: none;
   overflow: hidden;
   font-size: 15px;
 }
+
+
+@media (max-width: 600px) {
+  .button {
+    font-size: 14px; 
+    padding-block: 0.5rem; 
+    padding-inline: 1.1rem; 
+    border-radius: 12px; 
+  }
+}
+/* large */
+@media (min-width: 1200px) {
+  .button {
+    font-size: 15px; 
+    padding-block: 0.6rem; 
+    padding-inline: 1.5rem; 
+    border-radius: 16px; 
+  }
+}
+
 
 .icon {
   width: 24px;
@@ -50,7 +71,7 @@
 }
 
 .button:hover {
-  transform: scale(1.05);
+  transform: scale(1.00);
   border-color: #fff9;
 }
 

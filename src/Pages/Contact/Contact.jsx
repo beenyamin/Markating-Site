@@ -40,7 +40,7 @@ const Contact = () => {
       };
 
       const handleCheckboxChange = () => {
-            setIsChecked(true);
+            setIsChecked(!isChecked);
       };
       return (
 

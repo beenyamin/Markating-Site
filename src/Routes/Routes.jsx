@@ -7,12 +7,13 @@ import Projects from "../Pages/Projects/Projects";
 import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import Faq from "../Pages/Faq/Faq";
+import ErrorPage from "../Pages/Error/ErrorPage";
 
 export const Routes = createBrowserRouter([
       {
         path: "/",
         element: <Main></Main>,
-        errorElement:<Error/> , 
+        errorElement:<ErrorPage/> , 
         children:[
        {path:'/' , element:<Home/>}  ,
        {path:'/ContactUs' , element:<Contact/>}  ,

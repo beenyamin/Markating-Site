@@ -52,10 +52,8 @@ const Banner = () => {
 
             <div>
               <button
-                className="button"
-                onMouseMove={handleMouseMove}
-                style={{ '--x': `${position.x}px`, '--y': `${position.y}px` }} >
-               Learn More  < FaArrowTrendUp className='ml-2'/>
+                className="button"   >
+               Learn More  < FaArrowTrendUp/>
 
               </button>
             </div>
