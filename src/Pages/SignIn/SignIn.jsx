@@ -175,14 +175,7 @@ const SignIn = () => {
 
                     {/* right */}
 
-                    <div className=" p-5 md:rounded-r-xl rounded-xl md:rounded-none border  "
-                        style={{
-                            backgroundImage: `url("https://ibb.co/vzQGQgC")`,
-                            backgroundSize: 'cover', 
-                            backgroundPosition: 'center', 
-                            backgroundRepeat: 'no-repeat' ,
-                            backgroundColor:'#ed500c'
-                        }}   >
+                    <div className=" p-5 md:rounded-r-xl rounded-xl md:rounded-none border bg-gradient-to-r from-[#ffff] to-[#ffb9a1] "  >
 
 
                         <div className="relative md:mt-20 bg-transparent p-10 border shadow-2xl bg-white rounded-2xl">

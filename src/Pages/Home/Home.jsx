@@ -3,7 +3,9 @@ import Experience from "../../Components/Experience/Experience";
 import Footer from "../../Components/Footer/Footer";
 import Service from "../../Components/Service/Service";
 import ServiceCard from "../../Components/Service/ServiceCard";
+import Skills from "../../Components/Skills/Skills";
 import Banner from "../../Header/Banner/Banner";
+
 
 const Home = () => {
       return (
@@ -14,13 +16,17 @@ const Home = () => {
                         <ServiceCard />
                   </div>
 
-
                   <div className="-mt-36   lg:hidden">
                         <Service />
                   </div>
-                  <Experience />
-                  <Agency />
-                  <Footer/>
+                  <div className="">
+                        <Experience />
+
+
+                        <Skills />
+                        <Agency />
+                  </div>
+                  <Footer />
 
 
             </div>

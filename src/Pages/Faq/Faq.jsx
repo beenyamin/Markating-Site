@@ -4,12 +4,12 @@ import Footer from "../../Components/Footer/Footer";
 
 const Faq = () => {
       return (
-            <div>
+            <div className="bg-gradient-to-r to-[#fbfbfb] from-[#ffc4b8]">
                 
                 <div className="lg:px-20">
                         <Navbar />
                   </div>
-                  <section className="relative overflow-hidden bg-white pb-12 pt-20 lg:pb-[90px] lg:pt-[120px]">
+                  <section className="relative overflow-hidden  pb-12 pt-20 lg:pb-[90px] lg:pt-[90px]">
                         <div className="container mx-auto">
                               <div className="-mx-4 flex flex-wrap">
                                     <div className="w-full px-4">

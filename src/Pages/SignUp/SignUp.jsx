@@ -64,10 +64,9 @@ const SignUp = () => {
                                           <div className="ml-14">
                                                 <Lottie animationData={animationSignUp} style={{ height: '200%', width: '70%' }} />
                                           </div>
-                                    </div>
-                              </div>
+                                    </div>                              </div>
                               {/* right */}
-                              <div className="md:w-[60%] my-20  mb-20 md:mb-0 mt-10 md:mt-0 md:-ml-10 bg-white md:rounded-l-xl rounded-xl shadow border md:border">
+                              <div className="md:w-[60%] my-20  mb-20 md:mb-0 mt-10 md:mt-0 md:-ml-10 bg-white md:rounded-l-xl rounded-xl  border md:border">
                                     <div className="md:p-[50px] p-5 space-y-4">
                                           <div className="px-2 space-y-3">
                                                 <h2 className="font-bold text-4xl">Sign Up ✌️</h2>
@@ -245,7 +244,7 @@ const SignUp = () => {
                                                 </div>
 
                                                 <div className="mt-6 text-center">
-                                                      <Link to='/signUp'>
+                                                      <Link to='/signIn'>
                                                             <span className="text-slate-400"> Already Have An Account</span>
                                                             <button className="rounded-full py-[6px] px-5 border cursor-pointer ml-2 hover:bg-[#ed500c] hover:text-white shadow">
                                                                   Sign in

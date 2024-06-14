@@ -1,22 +1,13 @@
-import bannerImg from '/gesto.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import { FaArrowTrendUp } from "react-icons/fa6";
 import Navbar from '../Navbar/Navbar';
 
-import useButtonRipple from '../../Hooks/useButtonRipple';
-
-
 const Banner = () => {
-
-  const {position, handleMouseMove } = useButtonRipple(); 
-
-  const bannerStyle = { backgroundImage: `url(${bannerImg})`, }
-
 
 
   return (
-    <div style={bannerStyle} className="max-w-full lg:h-[800px] h-[1000px] lg:px-20 bg-gray-200">
+    <div  className="max-w-full lg:h-[800px] h-[1000px] lg:px-20  bg-gradient-to-r to-[#fbfbfb] from-[#ffc4b8]">
       <Navbar />
       <div className='flex flex-col lg:flex-row  items-center justify-between lg:pt-16 pb-20 '>
 

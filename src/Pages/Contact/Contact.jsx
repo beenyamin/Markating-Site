@@ -45,8 +45,6 @@ const Contact = () => {
       return (
 
             <div className="">
-
-
                   <div className="lg:px-20">
                         <Navbar />
                   </div>

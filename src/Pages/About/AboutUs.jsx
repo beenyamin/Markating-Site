@@ -1,36 +1,53 @@
-
+import Lottie from 'lottie-react';
 import Navbar from '../../Header/Navbar/Navbar';
-import shapeTopLeft from '../../../src/assets/Contact.png';
-import shapeBottomRight from '../../../src/assets/Contact1.png';
+import animateDev from '../../../public/devAnimation.json'
+import { FaArrowTrendUp } from 'react-icons/fa6';
 
 
 const AboutUs = () => {
+ 
 
   return (
-    <div className="md:px-20 max-w-full md:h-[800px] h-[1000px] relative">
-      <Navbar />
+    < div>
 
-      <div className="py-24 md:px-20 relative overflow-hidden">
-        <div className="h-[240px] bg-[#ed500c] rounded-md flex flex-col items-center justify-center">
-          <h2 className="text-center text-md font-medium bg-white py-2 px-6 rounded-md">Write To Us</h2>
-          <h3 className="text-4xl font-semibold mt-5 text-white">Get In Touch</h3>
 
-          {/* Shape design in top left corner */}
-          <div className="absolute top-2 left-2 w-36 h-[153px]" style={{ backgroundImage: `url(${shapeTopLeft})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
-          {/* Shape design in bottom right corner */}
-          <div className="absolute bottom-2 right-2 w-36 h-[153px]" style={{ backgroundImage: `url(${shapeBottomRight})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
+
+
+
+      <div className="lg:h-[800px] h-[1000px] lg:px-20  bg-gradient-to-r from-[#fbfbfb] to-[#ffc4b8]">
+        <div className="">
+          <Navbar />
+        </div>
+
+        <div className="relative flex justify-between py-20">
+          <div className=" text-3xl font-medium  flex flex-col justify-center items-center p-8 rounded-lg z-10">
+            <h1 className="text-5xl text-[#ed500c] font-semibold">About Us</h1>
+            <h2 className="px-8 py-4 text-center">
+              Dev Zone is a Platform <br /> that you can buy new <br /> custom site that you Want
+            </h2>
+            <button className="button flex items-center space-x-2">
+              Learn More <FaArrowTrendUp />
+            </button>
+          </div>
+          <div className="relative  rounded-lg overflow-hidden z-10 w-full max-w-md">
+            <Lottie
+              animationData={animateDev}
+              style={{ height: "100%", width: "100%" }}
+            />
+
+          </div>
         </div>
       </div>
-      About Us
 
 
-      <div className="bg-cover  overflow-hidden" style={{ backgroundImage: "https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" }}>
-        signin
+     
       </div>
 
 
 
-    </div>
+
+
+
   );
 };
 

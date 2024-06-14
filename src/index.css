@@ -7,6 +7,35 @@
 
 @layer components {
 
+
+
+/* Card animation */
+
+
+
+
+  .cards-container2 {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cardAbout {
+    min-width: 200px;
+    animation: moveCard 20s linear infinite;
+  }
+  
+  @keyframes moveCard {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(calc(100% + 200px));
+    }
+  }
+  
+
+
   .swiper-pagination {
     margin-top: 40px;
   }
