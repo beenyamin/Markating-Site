@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Navbar from "../../Header/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
+import GoToTop from "../../Components/GoToTop/GoToTop";
 
 const Faq = () => {
       return (
             <div className="bg-gradient-to-r to-[#fbfbfb] from-[#ffc4b8]">
-                
-                <div className="lg:px-20">
+
+                  <div className="lg:px-20">
                         <Navbar />
                   </div>
                   <section className="relative overflow-hidden  pb-12 pt-20 lg:pb-[90px] lg:pt-[90px]">
@@ -28,7 +29,7 @@ const Faq = () => {
                                     </div>
                               </div>
 
-                              <div className="-mx-4 flex flex-wrap">
+                              <div className="-mx-4 flex flex-wrap lg:px-20">
                                     <div className="w-full px-4 lg:w-1/2">
                                           <AccordionItem
                                                 header="How long we deliver your first blog post?"
@@ -91,6 +92,7 @@ const Faq = () => {
                         </div>
                   </section>
 
+                  <GoToTop />
                   <Footer />
             </div>
       );

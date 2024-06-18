@@ -2,13 +2,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck} from '@fortawesome/free-solid-svg-icons'
 import { FaArrowTrendUp } from "react-icons/fa6";
 import Navbar from '../Navbar/Navbar';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
 
 
   return (
     <div  className="max-w-full lg:h-[800px] h-[1000px] lg:px-20  bg-gradient-to-r to-[#fbfbfb] from-[#ffc4b8]">
-      <Navbar />
+
+      {/* <Navbar /> */}
+
+<div className='pb-20 '>
+<Navbar/>
+</div>
+   
       <div className='flex flex-col lg:flex-row  items-center justify-between lg:pt-16 pb-20 '>
 
         <div className='lg:w-[50%] w-full px-6 '>
@@ -42,11 +49,11 @@ const Banner = () => {
           <div className='pt-4 flex space-x-3 mt-4'>
 
             <div>
-              <button
+             <Link to="/AboutUs"> <button
                 className="button"   >
                Learn More  < FaArrowTrendUp/>
 
-              </button>
+              </button></Link>
             </div>
 
 
@@ -78,8 +85,7 @@ const Banner = () => {
       </div>
 
 
- 
- 
+
     </div>
 
   );

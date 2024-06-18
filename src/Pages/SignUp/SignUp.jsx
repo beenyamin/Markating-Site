@@ -12,6 +12,7 @@ import Lottie from "lottie-react";
 import animationSignUp from '../../../public/SignUp Tree.json';
 
 
+
 const SignUp = () => {
       const [showPassword, setShowPassword] = useState(false);
       const [isChecked, setIsChecked] = useState(false)
@@ -49,7 +50,9 @@ const SignUp = () => {
 
 
             <div className="lg:px-20">
-                  <Navbar />
+             <div className='pb-20 '>
+<Navbar/>
+</div>
 
                   <div className="py-[250px] md:py-20 h-[900px]">
                         <div className="container md:h-[670px] h-[920px] flex flex-col md:flex-row items-center justify-center">

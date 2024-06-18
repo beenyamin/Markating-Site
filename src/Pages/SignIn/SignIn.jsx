@@ -13,6 +13,7 @@ import animationFlowerTree from '../../../public/Flower tree.json';
 import { Link } from "react-router-dom";
 
 
+
 const SignIn = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [isChecked, setIsChecked] = useState(false)
@@ -50,7 +51,9 @@ const SignIn = () => {
 
     return (
         <div className="lg:px-20 ">
-            <Navbar />
+          <div className='pb-20 '>
+<Navbar/>
+</div>
 
             <div className=" py-20 h-[900px] ">
                 <div className="container md:h-[750px] h-[890px]  flex flex-col md:flex-row ">

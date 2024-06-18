@@ -1,83 +1,143 @@
-import { ImCss3, ImHtmlFive } from "react-icons/im";
+
 import useCardData from "../../Hooks/useCardData";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaCss3Alt, FaNodeJs, FaReact } from "react-icons/fa";
+import { SiMongodb, SiTailwindcss } from "react-icons/si";
+import { IoLogoFirebase } from "react-icons/io5";
+import { RiHtml5Fill } from "react-icons/ri";
+
+
+
 const skills = [
   {
     icon:
-      <ImHtmlFive size={40} />,
+      <RiHtml5Fill size={80}/>,
     name: 'HTML',
-    bg: '/public/images/html-active.svg',
-    hoverBg: '/public/images/html.svg',
+    bg: '/images/html.svg',
   },
 
 
   {
     icon:
-      <ImCss3 size={40} />,
+      <FaCss3Alt size={60} />,
     name: 'CSS',
-    bg: '/public/images/css-active.svg',
-    hoverBg: '/public/images/css.svg',
+    bg: '/images/css.svg',
+
   },
 
   {
     icon:
-      <ImCss3 size={40} />,
+      <IoLogoJavascript size={50} />,
     name: 'JavaScript',
-    bg: '/public/images/js-active.svg',
-    hoverBg: '/public/images/js.svg',
+    bg: '/images/js.svg',
+
   },
 
   {
     icon:
-      <ImCss3 size={40} />,
+      < FaReact size={50} />,
     name: 'React',
-    bg: '/public/images/react-active.svg',
-    hoverBg: '/public/images/react.svg',
+    bg: '/images/react.svg',
   },
 
   {
     icon:
-      <ImCss3 size={40} />,
+      <SiMongodb size={60} />,
     name: 'MongoDB',
-    bg: '/public/images/mongodb-active.svg',
-    hoverBg: '/public/images/mongodb.svg' ,
+    bg: '/images/mongodb.svg',
   },
   {
     icon:
-      <ImCss3 size={40} />,
-    name: 'Node',
-    bg:  '/public/images/node-active.svg',
-    hoverBg:'/public/images/node.svg' ,
-  },
-  {
-    icon:
-      <ImCss3 size={40} />,
+      < IoLogoFirebase size={60} />,
     name: 'Firebase',
-    bg: '/public/images/firebase-active.svg',
-    hoverBg: '/public/images/firebase.svg',
+    bg: '/images/firebase.svg',
   },
   {
-    icon: <ImCss3 size={40} />,
+    icon:
+      < FaNodeJs size={60} />,
+    name: 'Node Js',
+    bg: '/images/node.svg',
+  },
+
+  {
+    icon: <SiTailwindcss size={60} />,
     name: 'Tailwind',
-    bg:  '/public/images/tailwind-active.svg',
-    hoverBg: '/public/images/tailwind.svg',
-  }
+    bg: '/images/tailwind.svg',
+  },
+  {
+    icon:
+      <RiHtml5Fill size={60} />,
+    name: 'HTML',
+    bg: '/images/html.svg',
+  },
+  {
+    icon:
+      <FaCss3Alt size={60} />,
+    name: 'CSS',
+    bg: '/images/css.svg',
+
+  },
+
+  {
+    icon:
+      <IoLogoJavascript size={50} />,
+    name: 'JavaScript',
+    bg: '/images/js.svg',
+
+  },
+
+  {
+    icon:
+      < FaReact size={50} />,
+    name: 'React',
+    bg: '/images/react.svg',
+  },
+
+  {
+    icon:
+      <SiMongodb size={60} />,
+    name: 'MongoDB',
+    bg: '/images/mongodb.svg',
+  },
+  {
+    icon:
+      < IoLogoFirebase size={60} />,
+    name: 'Firebase',
+    bg: '/images/firebase.svg',
+  },
+  {
+    icon:
+      < FaNodeJs size={60} />,
+    name: 'Node Js',
+    bg: '/images/node.svg',
+  },
+
+  {
+    icon: <SiTailwindcss size={60} />,
+    name: 'Tailwind',
+    bg: '/images/tailwind.svg',
+  },
 ];
-
-
 
 
 const Skills = () => {
   const cards = useCardData(skills);
   return (
+    <div className="py-10">
+      <h2 className="text-5xl font-extrabold text-center py-5">Technology that I know </h2>
 
-    <div className="flex justify-center py-20 bg-[#04092f]">
-    <div className="max-w-screen-2xl mx-auto w-full ">
-      <div className="flex  justify-center space-x-4 mx-auto overflow-hidden">
-        {cards}
+      <div className="flex justify-center py-12">
+        <div className="max-w-screen-2xl mx-auto w-full ">
+          <div className="flex justify-center space-x-4 mx-auto overflow-hidden">
+            {cards}
+          </div>
+        </div>
       </div>
+
+
     </div>
-  </div>
   );
 };
 
 export default Skills;
+

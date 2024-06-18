@@ -2,9 +2,9 @@ import Navbar from "../../Header/Navbar/Navbar";
 
 const Projects = () => {
       return (
-            <div className="lg:px-20">
+            <div className="lg:px-20 ">
                       <Navbar/>
-                  Our Projects 
+            <h2 className="pt-20">      Our Projects </h2>
             </div>
       );
 };

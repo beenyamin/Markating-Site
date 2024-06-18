@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 import shapeTopLeft from '../../../src/assets/Contact.png';
 import shapeBottomRight from '../../../src/assets/Contact1.png';
 import { TbMailHeart, TbMessage2Heart } from "react-icons/tb";
+import GoToTop from "../../Components/GoToTop/GoToTop";
 
 
 const Contact = () => {
@@ -46,17 +47,18 @@ const Contact = () => {
 
             <div className="">
                   <div className="lg:px-20">
-                        <Navbar />
+                        {/* <Navbar /> */}
+                        <Navbar/>
                   </div>
 
                   <div className="pt-20 lg:px-20 relative overflow-hidden">
 
-                        <div className="h-[240px] bg-[#ed500c] rounded-md flex flex-col items-center justify-center ">
+                        <div className="h-[240px] bg-[#ed500c] rounded-md flex flex-col items-center justify-center mt-20">
                               <h2 className="text-center text-lg font-semibold bg-white py-2 px-6 rounded-2xl">Write To Us</h2>
                               <h3 className="text-4xl font-semibold mt-5 text-white">Get In Touch</h3>
 
                               {/* Shape design in top left corner */}
-                              <div className="absolute -top-3 left-4 w-36 h-[180px] md:block hidden" style={{ backgroundImage: `url(${shapeTopLeft})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', }}></div>
+                              <div className="absolute top-20 left-4 w-36 h-[180px] md:block hidden" style={{ backgroundImage: `url(${shapeTopLeft})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', }}></div>
                               {/* Shape design in bottom right corner */}
                               <div className="absolute bottom-0  right-0 w-36 h-[100px]  md:block hidden " style={{ backgroundImage: `url(${shapeBottomRight})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
                         </div>
@@ -260,6 +262,8 @@ const Contact = () => {
                         </div>
 
                   </div>
+
+                  <GoToTop/>
                   <Footer />
 
             </div>
