@@ -8,6 +8,7 @@ import SignIn from "../Pages/SignIn/SignIn";
 import SignUp from "../Pages/SignUp/SignUp";
 import Faq from "../Pages/Faq/Faq";
 import ErrorPage from "../Pages/Error/ErrorPage";
+import Process from "../Pages/Process/Process";
 
 export const Routes = createBrowserRouter([
       {
@@ -19,6 +20,7 @@ export const Routes = createBrowserRouter([
        {path:'/ContactUs' , element:<Contact/>}  ,
        {path:'/AboutUs' , element:<AboutUs/>}  ,
        {path:'/Projects' , element:<Projects/>},  
+       {path:'/OurProcess' , element:<Process/>},  
        {path:'/Faq' , element:<Faq/>}  ,
 
        {path:'/signIn' , element:<SignIn/>} , 

@@ -10,7 +10,7 @@ const Faq = () => {
                   <div className="lg:px-20">
                         <Navbar />
                   </div>
-                  <section className="relative overflow-hidden  pb-12 pt-20 lg:pb-[90px] lg:pt-[90px]">
+                  <section className="relative overflow-hidden  pb-12 pt-20 lg:pb-[90px] lg:pt-[140px]">
                         <div className="container mx-auto">
                               <div className="-mx-4 flex flex-wrap">
                                     <div className="w-full px-4">

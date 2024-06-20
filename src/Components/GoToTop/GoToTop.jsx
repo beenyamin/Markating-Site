@@ -1,6 +1,5 @@
 import  { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAnglesUp } from '@fortawesome/free-solid-svg-icons';
+
 
 const GoToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,7 +9,7 @@ const GoToTop = () => {
   };
 
   const listenToScroll = () => {
-    let heightToHidden = 20;
+    let heightToHidden = 800;
     const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 
     if (winScroll > heightToHidden) {

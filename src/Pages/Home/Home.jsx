@@ -8,6 +8,8 @@ import Skills from "../../Components/Skills/Skills";
 import Banner from "../../Header/Banner/Banner";
 
 
+
+
 const Home = () => {
       return (
             <div className="font-Poppins bg-gradient-to-r to-[#fbfbfb] from-[#ffc4b8]">
@@ -24,7 +26,6 @@ const Home = () => {
                   <div className="">
                         <Experience />
                         <Skills />
-                        {/* <Test/> */}
                         <Agency />
                   </div>
                   <GoToTop/>

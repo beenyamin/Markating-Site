@@ -1,12 +1,47 @@
+import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Header/Navbar/Navbar";
 
-const Projects = () => {
-      return (
-            <div className="lg:px-20 ">
-                      <Navbar/>
-            <h2 className="pt-20">      Our Projects </h2>
-            </div>
-      );
-};
 
-export default Projects;
+
+const Card = ({ title, body , backgroundImage }) => {
+      return (
+          <div className="card-Projects">
+          <img src={backgroundImage} alt={title} />
+          <div className="card-Projects-details">
+            <div className="text-title">{title}</div>
+            <div className="text-body">{body}</div>
+          </div>
+          <button className="card-Projects-button bottom-[120px] md:bottom-40 ">View Project</button>
+        </div>
+      );
+    };
+    
+    
+    const CardContainer = () => {
+          const cards = [
+            { title: 'Project 1', body: 'This is the first Project.', backgroundImage: '/pg1.png' },
+            { title: 'Project 2', body: 'This is the second Project.', backgroundImage: '/pg2.jpg' },
+            { title: 'Project 3', body: 'This is the third Project.', backgroundImage: '/pg3.png' },
+            { title: 'Project 4', body: 'This is the fourth Project.', backgroundImage: '/pg2.jpg' },
+          ];
+    
+      return (
+            <div className="">
+                  <div className="py-20">
+                           <Navbar/>
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto w-full lg:px-20 px-10 gap-10 pb-20">
+          {cards.map((card, index) => (
+            <Card key={index} title={card.title} body={card.body} backgroundImage={card.backgroundImage} />
+          ))}
+        </div>
+
+        <Footer/>
+            </div>
+        
+      );
+    };
+    
+    export default CardContainer;
+    
