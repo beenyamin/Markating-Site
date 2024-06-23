@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import AnimatedImage from "./Animated/AnimatedImage";
-import IconBxlDevTo from "../Shared/Icon/icons";
 import { useState } from "react";
 import { FaLinkedinIn, FaRegCircleCheck } from "react-icons/fa6";
 import { IoMdCheckmark } from "react-icons/io";
 import { FaFacebookF } from "react-icons/fa";
 import { FiYoutube } from "react-icons/fi";
+import { SiSemanticweb } from "react-icons/si";
 
 
 
@@ -38,15 +38,17 @@ const Footer = () => {
                   <div className="grid grid-cols-1 lg:grid-cols-4 pt-12  ">
 
                         <div className="px-6 md:px-0">
-                              <Link href="/" className="block w-full ">
-                                    {/* <img src={Dev} className="h-64 bg-red-700" alt="" /> */}
+                              <div  className="block w-full ">
+                                 
 
-                                    <h2 className="flex text-xl font-MochiyPopOne gap-1 "><IconBxlDevTo /><span className='mt-3'>Zone</span></h2>
+                                    <Link className="flex text-xl font-MochiyPopOne gap-1 ">< SiSemanticweb color="#ed500c" size={35}/><span className='mt-1'>Yamin</span></Link>
+
+                                 
                                    
-                                    <p className="mt-3 base ">
+                                    <p className="mt-5 base ">
                                           Empowering businesses with <br /> cutting-edge web solutions <br /> Expertise, innovation <br /> & reliability at your service.
                                     </p>
-                              </Link>
+                              </div>
                         </div>
 
 

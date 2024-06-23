@@ -1,10 +1,15 @@
 import Lottie from "lottie-react";
 import animation2 from '../../../public/404.json';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const ErrorPage = () => {
       return (
             <div className="pt-14">
+                     <Helmet>
+        <title>Yamin | Error Page </title>
+      </Helmet>
+
 
 
                   <div className="items-center justify-center flex "><Lottie animationData={animation2} style={{ height: '500px', width: '500px' }} /></div>

@@ -1,8 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faRightLong } from '@fortawesome/free-solid-svg-icons'
 import ButtonAnimateImg from '../Footer/Animated/ButtonAnimateImg';
+import { motion } from 'framer-motion';
+import useCardAnimation from '../../Hooks/useCardAnimation';
 
 const Agency = () => {
+      const cardVariants = useCardAnimation ();
       return (
             <div className='my-20 pb-10 mx-auto  '>
                   <div className=''>
@@ -17,7 +20,16 @@ const Agency = () => {
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-8 lg:px-14 px-8 lg:gap-0 gap-8'>
 
 
-                              <div className="card w-full shadow-xl border-0 lg:w-[345px] bg-gradient-to-bl from-pink-100 to-neutral-100 rounded-lg">
+
+
+
+                              <motion.div   
+                                    initial="offscreen"
+                                    whileInView="onscreen"
+                                    viewport={{ once: true, amount: 0.5 }}
+                                    variants={cardVariants}
+
+                                    className="card w-full shadow-xl border-0 lg:w-[345px] bg-gradient-to-bl from-pink-100 to-neutral-100 rounded-lg">
                                     <div className="card-body p-3  ">
                                           <img className='h-[236px] hover-move ' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/11/1-29.png" alt="" />
 
@@ -51,14 +63,19 @@ const Agency = () => {
                                     </div>
                                     {/* btn */}
                                     <div>
-                                   <button className='bg-[#04092f] relative overflow-hidden flex justify-between px-12 text-white w-full border-0 rounded-b-lg py-4 text-lg font-semibold hover:bg-[#ec4814]'><ButtonAnimateImg/> Start With Us <FontAwesomeIcon className='mt-1' icon={faRightLong} /></button>
+                                          <button className='bg-[#04092f] relative overflow-hidden flex justify-between px-12 text-white w-full border-0 rounded-b-lg py-4 text-lg font-semibold hover:bg-[#ec4814]'><ButtonAnimateImg /> Start With Us <FontAwesomeIcon className='mt-1' icon={faRightLong} /></button>
                                     </div>
 
 
-                              </div>
+                              </motion.div>
 
 
-                              <div className="card w-full shadow-lg lg:w-[345px] bg-gradient-to-bl from-pink-100 to-neutral-100   rounded-lg">
+                              <motion.div   
+                                    initial="offscreen"
+                                    whileInView="onscreen"
+                                    viewport={{ once: true, amount: 0.5 }}
+                                    variants={cardVariants}
+                               className="card w-full shadow-lg lg:w-[345px] bg-gradient-to-bl from-pink-100 to-neutral-100   rounded-lg">
                                     <div className="card-body p-3">
                                           <img className='h-[236px] hover-move' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/11/1-21.png" alt="" />
 
@@ -97,16 +114,21 @@ const Agency = () => {
                                     {/* btn */}
                                     <div>
                                           <button className='bg-[#04092f] relative overflow-hidden flex justify-between px-12 text-white w-full border-0 rounded-b-lg py-4 text-lg font-semibold hover:bg-[#ec4814] transition-colors duration-300'>
-                                            <ButtonAnimateImg/>    Start With Us <FontAwesomeIcon className='mt-1' icon={faRightLong} />
+                                                <ButtonAnimateImg />    Start With Us <FontAwesomeIcon className='mt-1' icon={faRightLong} />
                                           </button>
 
                                     </div>
 
 
-                              </div>
+                                    </motion.div>
 
 
-                              <div className="card w-full shadow-lg lg:w-[345px] bg-gradient-to-bl from-pink-100 to-neutral-100  rounded-lg">
+                                    <motion.div   
+                                    initial="offscreen"
+                                    whileInView="onscreen"
+                                    viewport={{ once: true, amount: 0.5 }}
+                                    variants={cardVariants}
+                              className="card w-full shadow-lg lg:w-[345px] bg-gradient-to-bl from-pink-100 to-neutral-100  rounded-lg">
 
                                     <div className="card-body p-3">
                                           <img className='h-[236px] hover-move' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/11/1-17.png" alt="" />
@@ -143,12 +165,12 @@ const Agency = () => {
                                     </div>
                                     {/* btn */}
                                     <div>
-                                          <button className='bg-[#04092f] relative overflow-hidden flex justify-between px-12 text-white w-full border-0 rounded-b-lg py-4 text-lg font-semibold hover:bg-[#ec4814] '>Start With Us 
-                                          <ButtonAnimateImg/>
-                                          <FontAwesomeIcon className='mt-1' icon={faRightLong} /></button>
+                                          <button className='bg-[#04092f] relative overflow-hidden flex justify-between px-12 text-white w-full border-0 rounded-b-lg py-4 text-lg font-semibold hover:bg-[#ec4814] '>Start With Us
+                                                <ButtonAnimateImg />
+                                                <FontAwesomeIcon className='mt-1' icon={faRightLong} /></button>
                                     </div>
 
-                              </div>
+                                    </motion.div>
 
 
                         </div>

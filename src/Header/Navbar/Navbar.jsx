@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import IconBxlDevTo from "../../Components/Shared/Icon/icons";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { SiSemanticweb } from "react-icons/si";
+
 
 
 
@@ -35,8 +36,8 @@ const Navbar = () => {
 
 
         <div className="navbar-logo">
-          <Link href="/" className="block w-full">
-            <h2 className="flex text-xl font-MochiyPopOne gap-1"><IconBxlDevTo /><span className='mt-3'>Zone</span></h2>
+          <Link to="/" className="block w-full">
+            <h2 className="flex text-xl font-MochiyPopOne gap-1">< SiSemanticweb color="#ed500c" size={35}/><span className='mt-2'>Yamin</span></h2>
           </Link>
         </div>
 
@@ -105,10 +106,10 @@ const Navbar = () => {
 
           <NavLink to="/AboutUs"
             className={({ isActive, isPending }) =>
-              isPending ? "pending " : isActive ? "font-medium text-lg text-[#e30000]  rounded  " : "font-medium text-lg hover:border-b-2 hover:text-pink-500 hover:border-b-pink-500   "}>About Us</NavLink>
+              isPending ? "pending " : isActive ? "font-medium text-lg text-[#e30000]  rounded  " : "font-medium text-lg hover:border-b-2 hover:text-pink-500 hover:border-b-pink-500   "}>About Me</NavLink>
           <NavLink to="/ContactUs"
             className={({ isActive, isPending }) =>
-              isPending ? "pending " : isActive ? "font-medium text-lg text-[#e30000]  rounded " : "font-medium text-lg hover:border-b-2 hover:text-pink-500 hover:border-b-pink-500   "}>Contact Us</NavLink>
+              isPending ? "pending " : isActive ? "font-medium text-lg text-[#e30000]  rounded " : "font-medium text-lg hover:border-b-2 hover:text-pink-500 hover:border-b-pink-500   "}>Contact Me</NavLink>
 
 
         </div>
@@ -129,8 +130,8 @@ const Navbar = () => {
       <div className="flex w-full items-center justify-between  md:hidden ">
 
         <div className="">
-          <Link href="/" className="block w-full ">
-            <h2 className="flex text-xl font-MochiyPopOne gap-1"><IconBxlDevTo /><span className='mt-3'>Zone</span></h2>
+          <Link to="/" className="block w-full ">
+          <h2 className="flex text-xl font-MochiyPopOne gap-2">< SiSemanticweb color="#ed500c" size={30}/><span className='mt-1'>Yamin</span></h2>
           </Link>
         </div>
 
@@ -198,8 +199,8 @@ const Navbar = () => {
 
                 </div>
               </div>
-              <Link to='/AboutUs' className="flex md:py-2 text-lg font-medium text-black hover:text-dark dark:text-dark-6 dark:hover:text-white md:inline-flex mb-2 md:mb-0 mt-2 md:mt-0">About Us</Link>           
-              <Link to='/ContactUs' className="flex md:py-2 text-lg font-medium text-black hover:text-dark dark:text-dark-6 dark:hover:text-white md:inline-flex mb-2 md:mb-0">Contact Us</Link>
+              <Link to='/AboutUs' className="flex md:py-2 text-lg font-medium text-black hover:text-dark dark:text-dark-6 dark:hover:text-white md:inline-flex mb-2 md:mb-0 mt-2 md:mt-0">About Me</Link>           
+              <Link to='/ContactUs' className="flex md:py-2 text-lg font-medium text-black hover:text-dark dark:text-dark-6 dark:hover:text-white md:inline-flex mb-2 md:mb-0">Contact Me</Link>
 
               <Link to="/signIn" className=" hover:button  text-lg font-medium text-dark  dark:text-white "> Sign in </Link>
               <Link to="/signUp"><button className="button mt-3  text-base font-medium">Sign Up</button></Link>

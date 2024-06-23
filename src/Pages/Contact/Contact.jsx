@@ -16,6 +16,7 @@ import shapeTopLeft from '../../../src/assets/Contact.png';
 import shapeBottomRight from '../../../src/assets/Contact1.png';
 import { TbMailHeart, TbMessage2Heart } from "react-icons/tb";
 import GoToTop from "../../Components/GoToTop/GoToTop";
+import { Helmet } from "react-helmet-async";
 
 
 const Contact = () => {
@@ -46,9 +47,13 @@ const Contact = () => {
       return (
 
             <div className="">
+                  <Helmet>
+                        <title>Yamin | Contact Me </title>
+                  </Helmet>
+
                   <div className="lg:px-20">
                         {/* <Navbar /> */}
-                        <Navbar/>
+                        <Navbar />
                   </div>
 
                   <div className="pt-20 lg:px-20 relative overflow-hidden">
@@ -62,7 +67,7 @@ const Contact = () => {
                               {/* Shape design in bottom right corner */}
                               <div className="absolute bottom-0  right-0 w-36 h-[100px]  md:block hidden " style={{ backgroundImage: `url(${shapeBottomRight})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }}></div>
                         </div>
-                        
+
                   </div>
 
 
@@ -81,14 +86,14 @@ const Contact = () => {
                                           </label>
                                           <div className='relative'>
                                                 <input
-                                                      {...register("firstName", { required: "First name is required", maxLength: { value: 20, message: "Max length is 20" } , pattern: { value: /^[A-Za-z]+$/i, message: "Only alphabets are allowed" } })}
+                                                      {...register("firstName", { required: "First name is required", maxLength: { value: 20, message: "Max length is 20" }, pattern: { value: /^[A-Za-z]+$/i, message: "Only alphabets are allowed" } })}
                                                       type='text'
                                                       placeholder='Been'
                                                       className='w-full mt-1 bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2'
                                                 />
                                                 {errors.firstName && <p className="text-red-500">{errors.firstName.message}</p>}
                                                 <span className='absolute text-dark-3 top-[15px] left-4'>
-                                                      <GoPerson size={20} className="hover:text-[#ed500c] "/>
+                                                      <GoPerson size={20} className="hover:text-[#ed500c] " />
                                                 </span>
                                           </div>
                                     </div>
@@ -99,14 +104,14 @@ const Contact = () => {
                                           </label>
                                           <div className='relative'>
                                                 <input
-                                                      {...register("lastName",{ required: "Last name is required", maxLength: { value: 20, message: "Max length is 20" } ,  pattern: { value: /^[A-Za-z]+$/i, message: "Only alphabets are allowed" } })}
+                                                      {...register("lastName", { required: "Last name is required", maxLength: { value: 20, message: "Max length is 20" }, pattern: { value: /^[A-Za-z]+$/i, message: "Only alphabets are allowed" } })}
                                                       type='text'
                                                       placeholder='Yamin'
                                                       className='w-full mt-1 bg-transparent rounded-md border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2'
                                                 />
                                                 {errors.lastName && <p className="text-red-500">{errors.lastName.message}</p>}
                                                 <span className='absolute text-dark-3 top-[15px] left-4'>
-                                                      <GoPerson size={20} className="hover:text-[#ed500c] "/>
+                                                      <GoPerson size={20} className="hover:text-[#ed500c] " />
                                                 </span>
                                           </div>
                                     </div>
@@ -145,7 +150,7 @@ const Contact = () => {
                                                 />
                                                 {errors.message && <span className="text-red-500">{errors.message.message}</span>}
                                                 <div className='absolute top-[18px] left-4'>
-                                                      <span className="text-dark-3"><TbMessage2Heart  size={20} className="hover:text-[#ed500c] "/></span>
+                                                      <span className="text-dark-3"><TbMessage2Heart size={20} className="hover:text-[#ed500c] " /></span>
                                                 </div>
                                           </div>
                                     </div>
@@ -263,7 +268,7 @@ const Contact = () => {
 
                   </div>
 
-                  <GoToTop/>
+                  <GoToTop />
                   <Footer />
 
             </div>

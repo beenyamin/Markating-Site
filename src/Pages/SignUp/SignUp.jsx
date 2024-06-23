@@ -10,35 +10,57 @@ import { useForm } from "react-hook-form";
 import { BsPersonFillAdd, BsPersonHeart } from "react-icons/bs";
 import Lottie from "lottie-react";
 import animationSignUp from '../../../public/SignUp Tree.json';
+import { Helmet } from "react-helmet-async";
+import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 
 
 const SignUp = () => {
+      const { createUser  , signInWithGoogle , signInWithFacebook} = useAuth();
       const [showPassword, setShowPassword] = useState(false);
-      const [isChecked, setIsChecked] = useState(false)
-      const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm();
-
-
+      const [isChecked, setIsChecked] = useState(false);
+      const [password, setPassword] = useState('');
+      const [confirmPassword, setConfirmPassword] = useState('');
+      const { register, handleSubmit, formState: { errors }, reset, } = useForm();
 
       useEffect(() => {
             const savedPassword = localStorage.getItem('password');
             if (savedPassword) {
-                  setValue('password', savedPassword);
+                  setPassword(savedPassword);
+                  setConfirmPassword(savedPassword);
                   setIsChecked(true);
             }
-      }, [setValue]);
+      }, []);
 
       const handleCheckboxChange = () => {
             setIsChecked(!isChecked);
       };
 
-      const onSubmit = (data) => {
-            console.log(data);
-            if (isChecked) {
-                  localStorage.setItem('password', data.password);
-            } else {
-                  localStorage.removeItem('password');
+
+      const handleSignUp = async (data) => {
+            try {
+                  const result = await createUser(data.email, data.password);
+                  console.log(result);
+                  toast.success('Signed up');
+                  if (isChecked) {
+                        localStorage.setItem('password', data.password);
+                  } else {
+                        localStorage.removeItem('password');
+                  }
+                  setPassword('');
+                  setConfirmPassword('');
+            } catch (error) {
+                  console.error('Error signing up:', error);
+                  toast.error('Sign up Failed');
             }
+      };
+      const onSubmit = (data) => {
+            if (data.password !== data.confirmPassword) {
+                  toast.error('Passwords Dose not match');
+                  return;
+            }
+            handleSignUp(data);
             reset();
       };
 
@@ -46,13 +68,42 @@ const SignUp = () => {
             setShowPassword(!showPassword);
       };
 
+      const handleGoogleSignIn = async () => {
+
+            try {
+                await signInWithGoogle();
+                toast.success(' Signed Up ')
+    
+            } catch (error) {
+                toast.error(error.message)
+            }
+        }
+    
+    
+          const handleFacebookSignIn = async () => {
+            try {
+                await signInWithFacebook();
+                toast.success(' Signed Up ')
+            } catch (error) {
+                console.error("Error signing in with Facebook", error);
+                // Handle error
+            }
+        };
+
+
+
+
       return (
 
 
             <div className="lg:px-20">
-             <div className='pb-20 '>
-<Navbar/>
-</div>
+                  <Helmet>
+                        <title>Yamin | Sign Up </title>
+                  </Helmet>
+
+                  <div className='pb-20 '>
+                        <Navbar />
+                  </div>
 
                   <div className="py-[250px] md:py-20 h-[900px]">
                         <div className="container md:h-[670px] h-[920px] flex flex-col md:flex-row items-center justify-center">
@@ -83,7 +134,7 @@ const SignUp = () => {
                                                             <div className='relative text-dark-3'>
                                                                   <input
                                                                         {...register("firstName", { required: "First Name is required" })}
-                                                                        aria-invalid={errors.email ? "true" : "false"}
+                                                                        aria-invalid={errors.firstName ? "true" : "false"}
                                                                         type="text"
                                                                         placeholder="First Name"
                                                                         className="w-full mt-[3px] bg-transparent rounded-xl border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2"
@@ -91,9 +142,9 @@ const SignUp = () => {
                                                                   <span className="absolute top-[15px] left-4">
                                                                         <BsPersonHeart size={20} className="hover:text-[#ed500c]" />
                                                                   </span>
-                                                                  {errors.email && (
+                                                                  {errors.firstName && (
                                                                         <p role="alert" className="absolute right-0 top-12 text-red-500">
-                                                                              {errors.email.message}
+                                                                              {errors.firstName.message}
                                                                         </p>
                                                                   )}
                                                             </div>
@@ -102,7 +153,7 @@ const SignUp = () => {
                                                             <div className='relative text-dark-3'>
                                                                   <input
                                                                         {...register("lastName", { required: "Last Name is required" })}
-                                                                        aria-invalid={errors.email ? "true" : "false"}
+                                                                        aria-invalid={errors.lastName ? "true" : "false"}
                                                                         type="text"
                                                                         placeholder="Last Name"
                                                                         className="w-full mt-[3px] bg-transparent rounded-xl border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2"
@@ -110,9 +161,9 @@ const SignUp = () => {
                                                                   <span className="absolute top-[15px] left-4">
                                                                         <BsPersonFillAdd size={20} className="hover:text-[#ed500c]" />
                                                                   </span>
-                                                                  {errors.email && (
+                                                                  {errors.lastName && (
                                                                         <p role="alert" className="absolute right-0 top-12 text-red-500">
-                                                                              {errors.email.message}
+                                                                              {errors.lastName.message}
                                                                         </p>
                                                                   )}
                                                             </div>
@@ -146,9 +197,9 @@ const SignUp = () => {
                                                                   <select
                                                                         {...register("category")}
                                                                         aria-invalid={errors.category ? "true" : "false"}
-                                                                        className="w-full mt-[3px] bg-transparent rounded-xl border border-stroke dark:border-dark-3 py-[10px] pr-32 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2"
+                                                                        className="w-full mt-[3px] bg-transparent rounded-xl border border-stroke dark:border-dark-3 py-[10px] pr-32 pl-10 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2"
                                                                   >
-                                                                        <option value="">Gender</option>
+                                                                        <option>Gender</option>
                                                                         <option value="A">Male</option>
                                                                         <option value="B">Female</option>
                                                                         <option value="C">Other</option>
@@ -168,15 +219,15 @@ const SignUp = () => {
 
                                                 {/* 3rd */}
                                                 <div className="flex md:flex-row flex-col gap-5 mb-6 justify-center items-center">
-
-
                                                       <div className="w-full">
                                                             <div className='relative text-dark-3'>
                                                                   <input
                                                                         {...register("password", { required: "Password is required" })}
                                                                         aria-invalid={errors.password ? "true" : "false"}
                                                                         type={showPassword ? 'text' : 'password'}
-                                                                        placeholder="Type your password"
+                                                                        value={password}
+                                                                        onChange={(e) => setPassword(e.target.value)}
+                                                                        placeholder="New Password"
                                                                         className="w-full mt-[3px] bg-transparent rounded-xl border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2"
                                                                   />
                                                                   <span className="absolute top-[15px] left-4">
@@ -186,7 +237,7 @@ const SignUp = () => {
                                                                         {showPassword ? <AiFillEye size={20} className="hover:text-[#ed500c]" /> : <AiFillEyeInvisible size={20} className="hover:text-[#ed500c]" />}
                                                                   </span>
                                                                   {errors.password && (
-                                                                        <p role="alert" className="absolute right-0 -top-8 text-red-500">
+                                                                        <p role="alert" className="absolute right-0 -bottom-7 text-red-500">
                                                                               {errors.password.message}
                                                                         </p>
                                                                   )}
@@ -195,10 +246,12 @@ const SignUp = () => {
                                                       <div className="w-full">
                                                             <div className='relative text-dark-3'>
                                                                   <input
-                                                                        {...register("password", { required: "Password is required" })}
-                                                                        aria-invalid={errors.password ? "true" : "false"}
+                                                                        {...register("confirmPassword", { required: "Confirm Password is required" })}
+                                                                        aria-invalid={errors.confirmPassword ? "true" : "false"}
                                                                         type={showPassword ? 'text' : 'password'}
-                                                                        placeholder="Type your password"
+                                                                        value={confirmPassword}
+                                                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                                                        placeholder="Confirm Password"
                                                                         className="w-full mt-[3px] bg-transparent rounded-xl border border-stroke dark:border-dark-3 py-[10px] pr-3 pl-12 text-dark-6 outline-none transition focus:border-[#ed500c] active:border-[#ed500c] disabled:cursor-default disabled:bg-gray-2"
                                                                   />
                                                                   <span className="absolute top-[15px] left-4">
@@ -207,16 +260,13 @@ const SignUp = () => {
                                                                   <span className="absolute top-[15px] right-4 cursor-pointer" onClick={togglePassword}>
                                                                         {showPassword ? <AiFillEye size={20} className="hover:text-[#ed500c]" /> : <AiFillEyeInvisible size={20} className="hover:text-[#ed500c]" />}
                                                                   </span>
-                                                                  {errors.password && (
-                                                                        <p role="alert" className="absolute right-0 -top-8 text-red-500">
-                                                                              {errors.password.message}
+                                                                  {errors.confirmPassword && (
+                                                                        <p role="alert" className="absolute right-0 -bottom-7 text-red-500">
+                                                                              {errors.confirmPassword.message}
                                                                         </p>
                                                                   )}
                                                             </div>
                                                       </div>
-
-
-
                                                 </div>
 
                                                 <div className="flex mt-6 px-2 justify-start">
@@ -256,18 +306,19 @@ const SignUp = () => {
                                                 </div>
                                           </form>
 
+
                                           <div className="flex items-center justify-center px-8">
                                                 <div className="flex-grow border-t border-slate-200"></div>
                                                 <h3 className="px-4 text-center text-slate-400">Or</h3>
                                                 <div className="flex-grow border-t border-slate-200"></div>
                                           </div>
 
-                                          <div className="md:flex gap-3 items-center justify-center">
+                                          <div onClick={handleGoogleSignIn} className="md:flex gap-3 items-center justify-center">
                                                 <div className="border cursor-pointer flex gap-3 items-center justify-center shadow bg-transparent py-3 px-4 font-medium rounded-full">
                                                       <FcGoogle size={20} />
                                                       Sign Up with Google
                                                 </div>
-                                                <div className="mt-4 md:mt-0 border cursor-pointer flex gap-3 items-center justify-center shadow bg-transparent py-3 px-4 font-medium rounded-full">
+                                                <div onClick={handleFacebookSignIn} className="mt-4 md:mt-0 border cursor-pointer flex gap-3 items-center justify-center shadow bg-transparent py-3 px-4 font-medium rounded-full">
                                                       <FaFacebook size={20} color="#3670f5" />
                                                       Sign Up with Facebook
                                                 </div>
@@ -275,7 +326,7 @@ const SignUp = () => {
                                     </div>
                               </div>
 
-                       
+
                         </div>
                   </div>
 

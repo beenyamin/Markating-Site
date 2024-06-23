@@ -2,10 +2,15 @@ import { useState } from "react";
 import Navbar from "../../Header/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import GoToTop from "../../Components/GoToTop/GoToTop";
+import { Helmet } from "react-helmet-async";
 
 const Faq = () => {
       return (
             <div className="bg-gradient-to-r to-[#fbfbfb] from-[#ffc4b8]">
+                     <Helmet>
+        <title>Yamin | Faq </title>
+      </Helmet>
+
 
                   <div className="lg:px-20">
                         <Navbar />
