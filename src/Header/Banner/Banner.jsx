@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleCheck} from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import { FaArrowTrendUp } from "react-icons/fa6";
 import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router-dom';
@@ -8,14 +8,14 @@ const Banner = () => {
 
 
   return (
-    <div  className="max-w-full lg:h-[800px] h-[1000px] lg:px-20  bg-gradient-to-r to-[#fbfbfb] from-[#ffc4b8]">
+    <div className="max-w-full lg:h-[800px] h-[1000px] lg:px-20  bg-gradient-to-r to-[#fbfbfb] from-[#ffc4b8]">
 
       {/* <Navbar /> */}
 
-<div className='pb-20 '>
-<Navbar/>
-</div>
-   
+      <div className='pb-20 '>
+        <Navbar />
+      </div>
+
       <div className='flex flex-col lg:flex-row  items-center justify-between lg:pt-16 pb-20 '>
 
         <div className='lg:w-[50%] w-full px-6 '>
@@ -25,14 +25,16 @@ const Banner = () => {
               <h2 className='pl-2 text-xl font-semibold lg:text-xl '>Front End Developer</h2>
             </div>
           </div>
-          <div className='pt-2'>
 
-            <h2 className='text-3xl lg:text-4xl font-bold pt-2 '>Expert in HTML, CSS, & <br /> JavaScript  </h2>
+
+          <div className='pt-2 '>
+            <h2 className='text-3xl lg:text-4xl font-bold pt-2  '>Expert in HTML, CSS, & <br /> JavaScript  </h2>
             <p className='text-stone-600 pt-2 '>
               Crafting elegant interfaces, blending creativity with code, delivering seamless user experiences, and pushing boundaries with every project.
             </p>
-
           </div>
+
+          
 
           <div className='space-y-2 pt-2'>
             <div className='flex '>
@@ -49,9 +51,9 @@ const Banner = () => {
           <div className='pt-4 flex space-x-3 mt-4'>
 
             <div>
-             <Link to="/AboutUs"> <button
+              <Link to="/AboutUs"> <button
                 className="button"   >
-               Learn More  < FaArrowTrendUp/>
+                Learn More  < FaArrowTrendUp />
 
               </button></Link>
             </div>
@@ -76,15 +78,13 @@ const Banner = () => {
 
         <div className="mt-14 lg:mt-20 mb-10 lg:w-[50%] px-8">
           <div className='flex items-center justify-center'>
-            <img className='lg:w-11/12 lg:h-72 w-9/12 h-60 animate-float ' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/gto-hero-1-img-1.png" alt="" />
+            <img className='lg:w-10/12 lg:h-72 w-11/12 h-60 animate-float ' src="https://themexriver.com/wp/gesto/wp-content/uploads/2023/10/gto-hero-1-img-1.png" alt="" />
           </div>
         </div>
 
 
 
       </div>
-
-
 
     </div>
 

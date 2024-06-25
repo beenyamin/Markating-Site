@@ -177,6 +177,7 @@
     max-width: 1250px;
     left: 50%;
     transform: translateX(-50%);
+
   }
 
   .navbar.scrolled {
@@ -420,7 +421,37 @@
 
 
 
+/* banner text animation */
+  .wrapper {
+    place-items: center;
+  }
+  
+  .text-banner {
+    width: 22ch;
+    animation: typing 2s steps(40), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-size: 2em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+
   /*03  Experience Photo  */
+
+
+
   @keyframes float {
     0% {
       transform: translateY(0);
@@ -510,6 +541,7 @@
     width: 100%;
     z-index: 1000;
     transition: background-color 0.3s, box-shadow 0.3s;
+    border: #b3d4fc;
   }
 
   .header.scrolled {
@@ -524,7 +556,6 @@
   .navbarTogglerActive {
     transform: rotate(90deg);
   }
-
 
 
   @media (min-width: 768px) {

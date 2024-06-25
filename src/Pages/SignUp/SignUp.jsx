@@ -33,6 +33,7 @@ const SignUp = () => {
             }
       }, []);
 
+      
       const handleCheckboxChange = () => {
             setIsChecked(!isChecked);
       };
@@ -105,26 +106,26 @@ const SignUp = () => {
                         <Navbar />
                   </div>
 
-                  <div className="py-[250px] md:py-20 h-[900px]">
+                  <div className="py-[250px] md:py-20 md:h-[900px]  ">
                         <div className="container md:h-[670px] h-[920px] flex flex-col md:flex-row items-center justify-center">
                               {/* left */}
 
 
                               <div className="bg-[#ed500c]  md:rounded-l-xl rounded-xl md:rounded-none md:h-[686px] h-[890px] w-96 flex items-center justify-center md:justify-start">
                                     <div className="text-center  mt-[228px]">
-                                          <h2 className="text-3xl font-semibold text-white mb-5">
-                                                <span className="font-normal">Welcome to</span> <br /> Dev Zone
+                                          <h2 className="text-3xl font-medium text-white mb-5">
+                                          Connect With Us <br /> <span className="font-semibold text-4xl">  Yamin💚</span> 
                                           </h2>
                                           <div className="ml-14">
                                                 <Lottie animationData={animationSignUp} style={{ height: '200%', width: '70%' }} />
                                           </div>
                                     </div>                              </div>
                               {/* right */}
-                              <div className="md:w-[60%] my-20  mb-20 md:mb-0 mt-10 md:mt-0 md:-ml-10 bg-white md:rounded-l-xl rounded-xl  border md:border">
+                              <div className="md:w-[60%] my-20 mb-20 md:mb-0 mt-10 md:mt-0 md:-ml-10 bg-white md:rounded-l-xl rounded-xl  border md:border">
                                     <div className="md:p-[50px] p-5 space-y-4">
                                           <div className="px-2 space-y-3">
                                                 <h2 className="font-bold text-4xl">Sign Up ✌️</h2>
-                                                <p className="text-base font-normal">Create A New Account On Dev Zone</p>
+                                                <p className="text-base font-normal">Create A New Account On Yamin </p>
                                           </div>
 
                                           <form onSubmit={handleSubmit(onSubmit)} className="">

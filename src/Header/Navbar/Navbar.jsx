@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { SiSemanticweb } from "react-icons/si";
+import useAuth from "../../Hooks/useAuth";
 
 
 
 
 const Navbar = () => {
-
+  const { user } = useAuth
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -30,21 +31,15 @@ const Navbar = () => {
 
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       {/* pc */}
-      <div className="navbar-container  hidden md:flex ">
-
-
-
-
+      <div className="navbar-container  hidden md:flex  ">
         <div className="navbar-logo">
           <Link to="/" className="block w-full">
-            <h2 className="flex text-xl font-MochiyPopOne gap-1">< SiSemanticweb color="#ed500c" size={35}/><span className='mt-2'>Yamin</span></h2>
+            <h2 className="flex text-xl font-MochiyPopOne gap-1">< SiSemanticweb color="#ed500c" size={35} /><span className='mt-2'>Yamin</span></h2>
           </Link>
         </div>
 
         <div className="navbar-links ml-[150px]">
-
           <NavLink to="/"
-
             className={({ isActive, isPending }) =>
               isPending ? "pending " : isActive ? "font-medium text-lg text-[#e30000]  rounded px-2 " : "font-medium text-lg hover:border-b-2 hover:text-pink-500 hover:border-b-pink-500  px-2 "}>Home</NavLink>
 
@@ -115,11 +110,17 @@ const Navbar = () => {
         </div>
         <div className="navbar-buttons flex gap-5">
 
-          <div className="hidden justify-end pr-16 sm:flex md:pr-0">
-            <Link to="/signIn" className=" hover:button px-7 py-3 text-lg font-medium text-dark  dark:text-white hover:mr-3"> Sign in </Link>
-            <Link to="/signUp"><button className="button mt-1">Sign Up</button></Link>
 
-          </div>
+          {user ? (
+            <button className="button">Your Button Text</button>
+          ) : (
+            <div className="hidden justify-end pr-16 sm:flex md:pr-0">
+              <Link to="/signIn" className="hover:button px-7 py-3 text-lg font-medium text-dark dark:text-white hover:mr-3">Sign in</Link>
+              <Link to="/signUp">
+                <button className="button mt-1">Sign Up</button>
+              </Link>
+            </div>
+          )}
 
         </div>
       </div>
@@ -131,7 +132,7 @@ const Navbar = () => {
 
         <div className="">
           <Link to="/" className="block w-full ">
-          <h2 className="flex text-xl font-MochiyPopOne gap-2">< SiSemanticweb color="#ed500c" size={30}/><span className='mt-1'>Yamin</span></h2>
+            <h2 className="flex text-xl font-MochiyPopOne gap-2">< SiSemanticweb color="#ed500c" size={30} /><span className='mt-1'>Yamin</span></h2>
           </Link>
         </div>
 
@@ -199,7 +200,7 @@ const Navbar = () => {
 
                 </div>
               </div>
-              <Link to='/AboutUs' className="flex md:py-2 text-lg font-medium text-black hover:text-dark dark:text-dark-6 dark:hover:text-white md:inline-flex mb-2 md:mb-0 mt-2 md:mt-0">About Me</Link>           
+              <Link to='/AboutUs' className="flex md:py-2 text-lg font-medium text-black hover:text-dark dark:text-dark-6 dark:hover:text-white md:inline-flex mb-2 md:mb-0 mt-2 md:mt-0">About Me</Link>
               <Link to='/ContactUs' className="flex md:py-2 text-lg font-medium text-black hover:text-dark dark:text-dark-6 dark:hover:text-white md:inline-flex mb-2 md:mb-0">Contact Me</Link>
 
               <Link to="/signIn" className=" hover:button  text-lg font-medium text-dark  dark:text-white "> Sign in </Link>

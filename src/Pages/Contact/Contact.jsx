@@ -17,12 +17,14 @@ import shapeBottomRight from '../../../src/assets/Contact1.png';
 import { TbMailHeart, TbMessage2Heart } from "react-icons/tb";
 import GoToTop from "../../Components/GoToTop/GoToTop";
 import { Helmet } from "react-helmet-async";
+import useModal from "../../Hooks/useModal";
 
 
 const Contact = () => {
       const { position, handleMouseMove } = useButtonRipple();
       const { register, handleSubmit, formState: { errors }, reset } = useForm();
       const [isChecked, setIsChecked] = useState(false);
+      const { modalOpen, setModalOpen, trigger, modal } = useModal();
 
 
       const onSubmit = (data) => {
@@ -51,7 +53,7 @@ const Contact = () => {
                         <title>Yamin | Contact Me </title>
                   </Helmet>
 
-                  <div className="lg:px-20">
+                  <div className="lg:px-20 z-10">
                         {/* <Navbar /> */}
                         <Navbar />
                   </div>
@@ -170,9 +172,57 @@ const Contact = () => {
                                                       <span className='h-[10px] w-[10px] rounded-full bg-white dark:bg-dark'></span>
                                                 </div>
                                           </div>
-                                          <h2 className="text-lg font-medium">
-                                                Agree To Our <a className="text-[#ed500c] underline ml-1">Term & Condition</a>
-                                          </h2>
+
+                                          {/* Modal */}
+
+                                          <div className="flex">
+                                                <h2 className="text-lg font-medium">
+                                                      Agree To Our
+                                                </h2>
+
+                                                <button
+                                                      ref={trigger}
+                                                      onClick={() => setModalOpen(true)}
+                                                      className={`text-[#ed500c] underline ml-1 text-lg font-medium`}
+                                                >
+                                                      Term & Condition
+                                                </button>
+                                          </div>
+
+                                          <div  className={`fixed left-0 z-10 top-0 flex h-full min-h-screen w-full items-center justify-center bg-dark/80   px-4 py-5 ${modalOpen ? "block" : "hidden"
+                                                      }`}    >
+                                                <div
+                                                      ref={modal}
+                                                      onFocus={() => setModalOpen(true)}
+                                                      onBlur={() => setModalOpen(false)}
+                                                      className="w-full max-w-[570px] rounded-[20px] bg-white px-8 py-12 text-center dark:bg-dark-2 md:px-[70px] md:py-[60px]"
+                                                >
+                                                      <h3 className="pb-[18px] text-xl font-semibold text-dark dark:text-white sm:text-2xl">
+                                                      Terms and Conditions..🙂
+                                                      </h3>
+                                                      <span  className={`mx-auto mb-6 inline-block h-1 w-[90px] rounded bg-[#ed500c]`}
+                                                      ></span>
+                                                      <p className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
+                                                      By accessing and using this website, you agree to abide by its terms. All content is for informational purposes only. Unauthorized use or reproduction of material is prohibited. The site owner is not liable for any damages arising from use. Contact for permissions or queries.
+                                                      </p>
+                                                      <div className="-mx-3 flex flex-wrap">
+                                                            <div className="w-1/2 px-3">
+                                                                  <button
+                                                                        onClick={() => setModalOpen(false)}
+                                                                        className="block w-full rounded-md border border-stroke p-3 text-center text-base font-medium text-dark transition hover:border-red-600 hover:bg-red-600 hover:text-white dark:text-white"
+                                                                  >
+                                                                       Close
+                                                                  </button>
+                                                            </div>
+                                                            <div className="w-1/2 px-3">
+                                                                  <button className="block w-full rounded-md border  bg-[#ed500c] p-3 text-center text-base font-medium text-white transition hover:bg-pink-500">
+                                                                        <a href={`/#`}> Agree </a>
+                                                                  </button>
+                                                            </div>
+                                                      </div>
+                                                </div>
+                                          </div>
+
                                     </label>
 
 

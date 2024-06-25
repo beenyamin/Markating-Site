@@ -56,15 +56,15 @@ const Footer = () => {
                               <h2 className="text-2xl font-extrabold px-6 md:px-12">Useful Links</h2>
 
                               <div className="space-y-2 mt-6 font-medium text-base text-white border-r-[1px] border-[#484e8a] lg:px-12 px-6 ">
-                                    <Link
+                                    <Link to="/AboutUs"
                                           className="flex hover:text-[#ed500c] transition-colors cursor-pointer"
                                           onMouseEnter={() => setIsHoverAboutUs(true)}
                                           onMouseLeave={() => setIsHoverAboutUs(false)}>
                                           {isHoverAboutUs ? < IoMdCheckmark size={20} className="mt-1 transition-transform duration-300 ease-in-out" /> : <FaRegCircleCheck size={20} className="mt-1 transition-transform duration-300 ease-in-out" />}
-                                          <span className="ml-2">About Us</span>
+                                          <span className="ml-2">About Me</span>
 
                                     </Link>
-                                    <Link
+                                    <Link to="/Projects"
                                           className="flex hover:text-[#ed500c] transition-colors cursor-pointer"
                                           onMouseEnter={() => setIsHoverProjects(true)}
                                           onMouseLeave={() => setIsHoverProjects(false)}>
@@ -72,15 +72,15 @@ const Footer = () => {
                                           <span className="ml-2">Projects</span>
 
                                     </Link>
-                                    <Link
+                                    <Link to="/ContactUs"
                                           className="flex hover:text-[#ed500c] transition-colors cursor-pointer"
                                           onMouseEnter={() => setIsHoverContactUs(true)}
                                           onMouseLeave={() => setIsHoverContactUs(false)}>
                                           {isHoverContactUs ? < IoMdCheckmark size={20} className="mt-1 transition-transform duration-300 ease-in-out" /> : <FaRegCircleCheck size={20} className="mt-1 transition-transform duration-300 ease-in-out" />}
-                                          <span className="ml-2">Contact Us</span>
+                                          <span className="ml-2">Contact Me</span>
 
                                     </Link>
-                                    <Link
+                                    <Link 
                                           className="flex hover:text-[#ed500c] transition-colors cursor-pointer"
                                           onMouseEnter={() => setIsHoverLegalPrivacy(true)}
                                           onMouseLeave={() => setIsHoverLegalPrivacy(false)}>
@@ -115,7 +115,7 @@ const Footer = () => {
                                     <span className="ml-2">Our Community</span>
 
                               </Link>
-                              <Link
+                              <Link to="/OurProcess"
                                     className="flex hover:text-[#ed500c] transition-colors cursor-pointer"
                                     onMouseEnter={() => setIsHoverOurProcess(true)}
                                     onMouseLeave={() => setIsHoverOurProcess(false)}>
@@ -123,7 +123,7 @@ const Footer = () => {
                                     <span className="ml-2">Our Process</span>
 
                               </Link>
-                              <Link
+                              <Link to="/Faq"
                                     className="flex hover:text-[#ed500c] transition-colors cursor-pointer"
                                     onMouseEnter={() => setIsHoverFaq(true)}
                                     onMouseLeave={() => setIsHoverFaq(false)}>
@@ -164,7 +164,7 @@ const Footer = () => {
                   <div className="flex flex-col md:flex-row justify-between items-center p-4 mt-14 border-t-[1px] border-[#484e8a] text-neutral-content pb-48 ">
 
                         <div className="">
-                              <p>Copyright © 2024 Dev Zone - All right reserved</p>
+                              <p>Copyright © 2024 Yamin  - All right reserved</p>
                         </div>
                         <div className="flex gap-3 md:mt-0 mt-6 ">
                               <a className=" rounded-md p-2 bg-white text-[#ed500c] hover:bg-[#13112d] hover:text-white cursor-pointer">  <FaFacebookF className="" size={20} /> </a>
