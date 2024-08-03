@@ -18,6 +18,7 @@ import toast from "react-hot-toast";
 
 
 const SignIn = () => {
+    
     const { SignIn, signInWithGoogle, signInWithFacebook, } = useAuth();
     const [showPassword, setShowPassword] = useState(false);
     const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm();

@@ -20,7 +20,7 @@ const Experience = () => {
 
 
           <h2 className="text-3xl lg:text-4xl  font-bold mb-2 text-center lg:text-start">We Want To Give You <br className='lg:block hidden' /> The Best Service</h2>
-          <p className="text-md lg:text-lg text-center lg:text-start">We are 100+ professional software engineers with more than 10 years of experience in delivering superior products. Believe it because you've seen it. Here are real numbers.</p>
+          <p className="text-md lg:text-lg text-center lg:text-start"> Professional Frontend Developer  with more than 02 years of experience in delivering superior products. Believe it because you've seen it. Here are real numbers.</p>
 
         </div>
 
@@ -50,16 +50,16 @@ const Experience = () => {
 
               <div className='flex items-center'>
                 <FontAwesomeIcon icon={faCircleCheck} size="lg" style={{ color: "#ec4814" }} />
-                <h2 className='font-semibold text-sm md:text-base pl-2'>IT Consultancy</h2>
+                <h2 className='font-semibold text-sm md:text-base pl-2'>Clean Code</h2>
               </div>
 
               <div className='flex items-center'>
                 <FontAwesomeIcon icon={faCircleCheck} size="lg" style={{ color: "#ec4814" }} />
-                <h2 className='font-semibold text-sm md:text-base pl-2'>Digital Services</h2>
+                <h2 className='font-semibold text-sm md:text-base pl-2'>IT Consultancy</h2>
               </div>
               <div className='flex items-center'>
                 <FontAwesomeIcon icon={faCircleCheck} size="lg" style={{ color: "#ec4814" }} />
-                <h2 className='font-semibold text-sm md:text-base pl-2'>Product Engineering</h2>
+                <h2 className='font-semibold text-sm md:text-base pl-2'> Unlimited Revision</h2>
               </div>
             </div>
           </div>

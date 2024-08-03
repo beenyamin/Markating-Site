@@ -48,7 +48,7 @@ const Contact = () => {
       };
       return (
 
-            <div className="">
+            <div className=" bg-">
                   <Helmet>
                         <title>Yamin | Contact Me </title>
                   </Helmet>
@@ -222,6 +222,9 @@ const Contact = () => {
                                                       </div>
                                                 </div>
                                           </div>
+
+
+                                          
 
                                     </label>
 

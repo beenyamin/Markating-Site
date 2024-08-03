@@ -4,8 +4,9 @@ import Navbar from '../../Header/Navbar/Navbar';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import useCardAnimation from '../../Hooks/useCardAnimation';
-import { Link } from 'react-router-dom';
+
 import CountUp from 'react-countup';
+import Footer from '../../Components/Footer/Footer';
 
 
 
@@ -43,7 +44,7 @@ const AboutUs = () => {
       </Helmet>
 
 
-      <div className=" lg:px-20 ]">
+      <div className=" lg:px-20 ">
         <div className="">
           <Navbar />
         </div>
@@ -62,7 +63,7 @@ const AboutUs = () => {
         
           <div className=" overflow-hidden  ">
           
-          <div className="grid grid-cols-1 md:grid-cols-3  gap-6 px-14">
+          <div className="grid grid-cols-1 md:grid-cols-3  gap-6 px-14 mb-36 ">
           {cards.map((card, index) => (
             <motion.div
             key={index}
@@ -85,12 +86,11 @@ const AboutUs = () => {
 
       </div>
 
-      <section className="bg-gray-100 py-16">
-     
-  
-      </section>
+      {/* <section className="bg-gray-100 py-16">
+      </section> */}
 
 
+<Footer/>
 
     </div>
 

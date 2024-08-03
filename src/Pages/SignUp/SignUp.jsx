@@ -18,6 +18,7 @@ import toast from "react-hot-toast";
 
 const SignUp = () => {
       const { createUser  , signInWithGoogle , signInWithFacebook} = useAuth();
+      
       const [showPassword, setShowPassword] = useState(false);
       const [isChecked, setIsChecked] = useState(false);
       const [password, setPassword] = useState('');
